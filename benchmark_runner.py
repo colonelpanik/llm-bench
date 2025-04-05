@@ -1,6 +1,3 @@
-# Here is the entire file
-# --- Benchmark Execution Logic ---
-
 import time
 import traceback
 from collections import defaultdict

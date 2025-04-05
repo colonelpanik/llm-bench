@@ -1,4 +1,3 @@
-# Here is the entire file
 # LLM Benchmark Runner
 
 [![CI Tests](https://github.com/colonelpanik/llm-bench/actions/workflows/python-test.yml/badge.svg)](https://github.com/colonelpanik/llm-bench/actions/workflows/python-test.yml)

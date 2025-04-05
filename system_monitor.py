@@ -1,4 +1,3 @@
-# Here is the entire file
 # --- System Resource Monitoring (RAM, GPU) ---
 
 import re

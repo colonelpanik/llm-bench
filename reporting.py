@@ -1,4 +1,3 @@
-# Here is the entire file
 # --- HTML Report Generation and Plotting ---
 
 import json

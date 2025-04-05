@@ -1,4 +1,3 @@
-# Here is the entire file
 # --- LLM API Client Functions ---
 
 import requests

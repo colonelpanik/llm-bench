@@ -1,4 +1,3 @@
-# Here is the entire file
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 

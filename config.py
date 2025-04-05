@@ -1,6 +1,3 @@
-# Here is the entire file
-# --- Configuration and Constants ---
-
 import pathlib
 import json
 import os
