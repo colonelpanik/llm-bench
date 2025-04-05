@@ -1,0 +1,84 @@
+# LLM Benchmark Runner Configuration File
+# Settings here provide defaults and can be overridden by command-line arguments.
+
+# --- API Configuration ---
+api_keys:
+  # Gemini API Key. Can be overridden by GEMINI_API_KEY env var or --gemini-key arg.
+  gemini: "" # Recommend setting via ENV or CLI argument for security.
+
+# --- Default Models ---
+# List of models to benchmark if --test-model is not provided.
+default_models:
+  - "llama3:8b"
+  - "mistral:7b"
+  - "llama3.2:3b"
+  - "gemma3:4b"
+  - "gemini-1.5-flash-latest"
+  - "gemini-2.5-pro-preview-03-25"
+  - "huihui_ai/gemma3-abliterated:latest"
+
+code_models:
+  - "networkjohnny/deepseek-coder-v2-lite-base-q4_k_m-gguf"
+  - "qwen2.5-coder:4b"
+  - "qwen2.5-coder:1.5b-base"
+  - "codegemma:2b"
+  - gemini-pro
+
+# --- Paths ---
+# Default locations for files and directories. Can be overridden by CLI args.
+paths:
+  tasks_file: "benchmark_tasks.json"
+  report_dir: "./benchmark_report"
+  cache_dir: "./benchmark_cache"
+  template_file: "report_template.html"
+
+# --- Execution Control ---
+timeouts:
+  # Timeout for individual API requests (seconds).
+  request: 180
+  # Timeout for executing code within a single test case (seconds).
+  code_execution_per_case: 10
+
+retries:
+  # Number of retries for transient API errors (e.g., 5xx, timeout).
+  max_retries: 2
+  # Delay between retries (seconds).
+  retry_delay: 5
+
+# --- Cache ---
+cache:
+  # Time-to-live for cached results (seconds). 86400 = 1 day.
+  ttl_seconds: 86400
+
+# --- Scoring Weights ---
+scoring:
+  # Weights for the Ollama Performance Score (should sum roughly to 1.0).
+  ollama_perf_score:
+    accuracy: 0.50
+    tokens_per_sec: 0.30
+    ram_efficiency: 0.20 # Lower RAM delta gets higher score contribution
+
+  # Default weights for categories in the Overall Weighted Score.
+  # 'default' is used for task types not mapped to a specific category.
+  category_weights:
+    "General NLP": 1.0
+    "Code Generation": 1.0
+    "Other": 0.8
+    "default": 0.5
+
+# --- Feature Toggles ---
+# Default state for optional features. Can be overridden by CLI args
+# (--feature enable/disable).
+features:
+  ram_monitor: true # Requires 'psutil'
+  gpu_monitor: true # Requires 'pynvml' and NVIDIA GPU
+  visualizations: true # Requires 'matplotlib'
+  semantic_eval: true # Requires 'sentence-transformers'
+
+# --- Evaluation ---
+evaluation:
+  # Default minimum confidence threshold for 'classification_confidence' tasks.
+  default_min_confidence: 0.75
+  # Passing score threshold (percentage) for tasks using partial scoring
+  # (e.g., weighted keywords, semantic similarity).
+  passing_score_threshold: 70.0

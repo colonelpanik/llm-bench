@@ -1,0 +1,1764 @@
+{
+  "General NLP": [
+    {
+      "name": "Progression 1 (Rule) - Level 1: Identify by Single Feature",
+      "type": "reasoning",
+      "prompt": "Rule: Identify the item labeled exactly as '(fruit)'.\nList:\nApple (fruit)\nCarrot (vegetable)\n\nFrom the List, find the item that matches the Rule. Output ONLY the name of the item.",
+      "expected_keywords": [
+        "Apple"
+      ]
+    },
+    {
+      "name": "Progression 1 (Rule) - Level 1: Identify by Single Feature - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: YOU MUST FOLLOW THE RULE EXACTLY. YOUR OUTPUT MUST BE PRECISELY THE NAME OF THE MATCHING ITEM, WITH NO EXTRA TEXT OR EXPLANATION.\n\nRule: Identify the item labeled exactly as '(fruit)'.\nList:\nApple (fruit)\nCarrot (vegetable)\n\nFrom the List, find the item that matches the Rule. Output ONLY the name of the item.",
+      "expected_keywords": [
+        "Apple"
+      ]
+    },
+    {
+      "name": "Progression 1 (Rule) - Level 1: Identify by Single Feature - Persona",
+      "type": "reasoning",
+      "prompt": "You are a meticulous librarian cataloging items based on strict labels. Your task is to find the exact match.\n\nRule: Identify the item labeled exactly as '(fruit)'.\nList:\nApple (fruit)\nCarrot (vegetable)\n\nFrom the List, find the item that matches the Rule. Output ONLY the name of the item.",
+      "expected_keywords": [
+        "Apple"
+      ]
+    },
+    {
+      "name": "Progression 1 (Calculation) - Level 1: Simple Addition",
+      "type": "reasoning",
+      "prompt": "You have 5 red marbles and 3 blue marbles. How many marbles do you have in total? Output ONLY the final numerical value.",
+      "expected_keywords": [
+        "8"
+      ]
+    },
+    {
+      "name": "Progression 1 (Calculation) - Level 1: Simple Addition - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: PERFORM THE CALCULATION AS DESCRIBED. YOUR OUTPUT MUST BE ONLY THE FINAL NUMERICAL VALUE, WITH NO UNITS, SYMBOLS, OR EXPLANATIONS.\n\nYou have 5 red marbles and 3 blue marbles. How many marbles do you have in total? Output ONLY the final numerical value.",
+      "expected_keywords": [
+        "8"
+      ]
+    },
+    {
+      "name": "Progression 1 (Calculation) - Level 1: Simple Addition - Persona",
+      "type": "reasoning",
+      "prompt": "You are a calculator. Your function is to compute the result of the described operation accurately.\n\nYou have 5 red marbles and 3 blue marbles. How many marbles do you have in total? Output ONLY the final numerical value.",
+      "expected_keywords": [
+        "8"
+      ]
+    },
+    {
+      "name": "Progression 1 (Reconstruction) - Level 1: Simple Key-Value Mapping",
+      "type": "json_gen",
+      "prompt": "You are given the following data: 'The item is a Book, its Status is Available'.\nYou MUST create a JSON object using this data.\nThe JSON object MUST have two keys: 'item_name' and 'item_status'.\nMap the data to these keys.\n\nEXAMPLE FORMAT:\n{\n  \"item_name\": \"Value\",\n  \"item_status\": \"Value\"\n}\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "item_name": "Book",
+        "item_status": "Available"
+      }
+    },
+    {
+      "name": "Progression 1 (Reconstruction) - Level 1: Simple Key-Value Mapping - Gates",
+      "type": "json_gen",
+      "prompt": "ATTENTION: YOU MUST GENERATE A VALID JSON OBJECT. USE ONLY THE SPECIFIED KEYS ('item_name', 'item_status'). MAP THE PROVIDED DATA ACCURATELY. YOUR OUTPUT MUST BE ONLY THE JSON OBJECT, WITH NO OTHER TEXT.\n\nYou are given the following data: 'The item is a Book, its Status is Available'.\nYou MUST create a JSON object using this data.\nThe JSON object MUST have two keys: 'item_name' and 'item_status'.\nMap the data to these keys.\n\nEXAMPLE FORMAT:\n{\n  \"item_name\": \"Value\",\n  \"item_status\": \"Value\"\n}\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "item_name": "Book",
+        "item_status": "Available"
+      }
+    },
+    {
+      "name": "Progression 1 (Reconstruction) - Level 1: Simple Key-Value Mapping - Persona",
+      "type": "json_gen",
+      "prompt": "You are a data structuring bot. Your task is to convert unstructured text into a precise JSON format based on instructions.\n\nYou are given the following data: 'The item is a Book, its Status is Available'.\nYou MUST create a JSON object using this data.\nThe JSON object MUST have two keys: 'item_name' and 'item_status'.\nMap the data to these keys.\n\nEXAMPLE FORMAT:\n{\n  \"item_name\": \"Value\",\n  \"item_status\": \"Value\"\n}\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "item_name": "Book",
+        "item_status": "Available"
+      }
+    },
+    {
+      "name": "Progression 2 (Rule) - Level 2: Apply Two Simple Rules (AND/NOT)",
+      "type": "reasoning",
+      "prompt": "Rule A: The code MUST start with the letter 'A'.\nRule B: The code MUST NOT end with the number '9'.\n\nList of codes:\nAX1\nAZ9\nBY1\nA59\nAQ3\nAB8\n\nIdentify all codes from the list that satisfy BOTH Rule A AND Rule B. Output ONLY the valid codes, each on a new line.",
+      "expected_keywords": [
+        "AX1",
+        "AQ3",
+        "AB8"
+      ]
+    },
+    {
+      "name": "Progression 2 (Rule) - Level 2: Apply Two Simple Rules (AND/NOT) - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: YOU MUST APPLY BOTH RULES STRICTLY. YOUR OUTPUT MUST CONSIST ONLY OF THE CODES THAT MEET BOTH CONDITIONS, EACH ON A SEPARATE LINE. NO EXTRA TEXT OR HEADERS.\n\nRule A: The code MUST start with the letter 'A'.\nRule B: The code MUST NOT end with the number '9'.\n\nList of codes:\nAX1\nAZ9\nBY1\nA59\nAQ3\nAB8\n\nIdentify all codes from the list that satisfy BOTH Rule A AND Rule B. Output ONLY the valid codes, each on a new line.",
+      "expected_keywords": [
+        "AX1",
+        "AQ3",
+        "AB8"
+      ]
+    },
+    {
+      "name": "Progression 2 (Rule) - Level 2: Apply Two Simple Rules (AND/NOT) - Persona",
+      "type": "reasoning",
+      "prompt": "You are a code validation system. Your job is to filter codes based on precise criteria.\n\nRule A: The code MUST start with the letter 'A'.\nRule B: The code MUST NOT end with the number '9'.\n\nList of codes:\nAX1\nAZ9\nBY1\nA59\nAQ3\nAB8\n\nIdentify all codes from the list that satisfy BOTH Rule A AND Rule B. Output ONLY the valid codes, each on a new line.",
+      "expected_keywords": [
+        "AX1",
+        "AQ3",
+        "AB8"
+      ]
+    },
+    {
+      "name": "Progression 2 (Calculation) - Level 2: Calculation with One Condition",
+      "type": "reasoning",
+      "prompt": "Calculate the final cost. Base cost is $50.\nRule: If the shipping method is 'Express', add $10 to the base cost.\n\nShipping method used: Express\n\nCalculate the final cost based on the rule. Output ONLY the final numerical cost value (without the dollar sign).",
+      "expected_keywords": [
+        "60"
+      ]
+    },
+    {
+      "name": "Progression 2 (Calculation) - Level 2: Calculation with One Condition - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: APPLY THE RULE EXACTLY AS STATED. OUTPUT ONLY THE FINAL NUMERICAL VALUE OF THE COST. DO NOT INCLUDE '$' OR ANY OTHER TEXT.\n\nCalculate the final cost. Base cost is $50.\nRule: If the shipping method is 'Express', add $10 to the base cost.\n\nShipping method used: Express\n\nCalculate the final cost based on the rule. Output ONLY the final numerical cost value (without the dollar sign).",
+      "expected_keywords": [
+        "60"
+      ]
+    },
+    {
+      "name": "Progression 2 (Calculation) - Level 2: Calculation with One Condition - Persona",
+      "type": "reasoning",
+      "prompt": "You are an automated billing system component responsible for calculating final costs based on rules.\n\nCalculate the final cost. Base cost is $50.\nRule: If the shipping method is 'Express', add $10 to the base cost.\n\nShipping method used: Express\n\nCalculate the final cost based on the rule. Output ONLY the final numerical cost value (without the dollar sign).",
+      "expected_keywords": [
+        "60"
+      ]
+    },
+    {
+      "name": "Progression 2 (Reconstruction) - Level 2: Basic JSON Structure from Text",
+      "type": "json_gen",
+      "prompt": "You MUST reconstruct the described team roles into a JSON object.\nYou MUST use the exact keys: \"manager\", \"developer\", and \"tester\".\nThe value for each key MUST be the name provided for that role.\nYou MUST follow the structure shown in the EXAMPLE.\nYou MUST NOT include any roles not listed or add extra explanations.\n\nEXAMPLE STRUCTURE:\n{\n  \"manager\": \"Manager Name\",\n  \"developer\": \"Developer Name\",\n  \"tester\": \"Tester Name\"\n}\n\nDATA TO RECONSTRUCT:\n\"On the team, Alice is the manager. Bob is the developer. Charlie is the tester.\"\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "manager": "Alice",
+        "developer": "Bob",
+        "tester": "Charlie"
+      }
+    },
+    {
+      "name": "Progression 2 (Reconstruction) - Level 2: Basic JSON Structure from Text - Gates",
+      "type": "json_gen",
+      "prompt": "ATTENTION: YOU MUST CREATE A VALID JSON OBJECT. FOLLOW THE EXAMPLE STRUCTURE PRECISELY. USE ONLY THE SPECIFIED KEYS (\"manager\", \"developer\", \"tester\"). MAP NAMES TO ROLES EXACTLY. OUTPUT ONLY THE JSON OBJECT.\n\nYou MUST reconstruct the described team roles into a JSON object.\nYou MUST use the exact keys: \"manager\", \"developer\", and \"tester\".\nThe value for each key MUST be the name provided for that role.\nYou MUST follow the structure shown in the EXAMPLE.\nYou MUST NOT include any roles not listed or add extra explanations.\n\nEXAMPLE STRUCTURE:\n{\n  \"manager\": \"Manager Name\",\n  \"developer\": \"Developer Name\",\n  \"tester\": \"Tester Name\"\n}\n\nDATA TO RECONSTRUCT:\n\"On the team, Alice is the manager. Bob is the developer. Charlie is the tester.\"\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "manager": "Alice",
+        "developer": "Bob",
+        "tester": "Charlie"
+      }
+    },
+    {
+      "name": "Progression 2 (Reconstruction) - Level 2: Basic JSON Structure from Text - Persona",
+      "type": "json_gen",
+      "prompt": "You are an organizational chart generator. Your job is to take textual descriptions of team structures and represent them accurately in JSON format.\n\nYou MUST reconstruct the described team roles into a JSON object.\nYou MUST use the exact keys: \"manager\", \"developer\", and \"tester\".\nThe value for each key MUST be the name provided for that role.\nYou MUST follow the structure shown in the EXAMPLE.\nYou MUST NOT include any roles not listed or add extra explanations.\n\nEXAMPLE STRUCTURE:\n{\n  \"manager\": \"Manager Name\",\n  \"developer\": \"Developer Name\",\n  \"tester\": \"Tester Name\"\n}\n\nDATA TO RECONSTRUCT:\n\"On the team, Alice is the manager. Bob is the developer. Charlie is the tester.\"\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "manager": "Alice",
+        "developer": "Bob",
+        "tester": "Charlie"
+      }
+    },
+    {
+      "name": "Progression 3 (Rule) - Level 3: Multi-Step Dependent Rules",
+      "type": "reasoning",
+      "prompt": "Evaluate codes based on these sequential filtering steps:\nStep 1: Identify 'Initial Candidates' - Codes MUST contain at least one number.\nStep 2: Identify 'Second Pass' (from Initial Candidates) - Codes MUST also contain the letter 'X'.\nStep 3: Identify 'Final Valid' (from Second Pass) - Codes MUST be exactly 4 characters long.\n\nList of codes:\nAX1\nB2Y\nCX34\nD5ZA\nXTRA6\nFGH\nAX9M\nZ1X\n\nProcess the list through all steps. Output ONLY the 'Final Valid' codes, each on a new line.",
+      "expected_keywords": [
+        "CX34",
+        "AX9M"
+      ]
+    },
+    {
+      "name": "Progression 3 (Rule) - Level 3: Multi-Step Dependent Rules - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: FOLLOW THE SEQUENTIAL FILTERING STEPS EXACTLY. APPLY EACH STEP ONLY TO THE RESULTS OF THE PREVIOUS STEP. YOUR FINAL OUTPUT MUST BE ONLY THE CODES THAT PASS ALL THREE STEPS, EACH ON A NEW LINE. NO INTERMEDIATE RESULTS OR EXPLANATIONS.\n\nEvaluate codes based on these sequential filtering steps:\nStep 1: Identify 'Initial Candidates' - Codes MUST contain at least one number.\nStep 2: Identify 'Second Pass' (from Initial Candidates) - Codes MUST also contain the letter 'X'.\nStep 3: Identify 'Final Valid' (from Second Pass) - Codes MUST be exactly 4 characters long.\n\nList of codes:\nAX1\nB2Y\nCX34\nD5ZA\nXTRA6\nFGH\nAX9M\nZ1X\n\nProcess the list through all steps. Output ONLY the 'Final Valid' codes, each on a new line.",
+      "expected_keywords": [
+        "CX34",
+        "AX9M"
+      ]
+    },
+    {
+      "name": "Progression 3 (Rule) - Level 3: Multi-Step Dependent Rules - Persona",
+      "type": "reasoning",
+      "prompt": "You are a multi-stage data filtering pipeline. You receive a list and apply sequential rules to narrow it down.\n\nEvaluate codes based on these sequential filtering steps:\nStep 1: Identify 'Initial Candidates' - Codes MUST contain at least one number.\nStep 2: Identify 'Second Pass' (from Initial Candidates) - Codes MUST also contain the letter 'X'.\nStep 3: Identify 'Final Valid' (from Second Pass) - Codes MUST be exactly 4 characters long.\n\nList of codes:\nAX1\nB2Y\nCX34\nD5ZA\nXTRA6\nFGH\nAX9M\nZ1X\n\nProcess the list through all steps. Output ONLY the 'Final Valid' codes, each on a new line.",
+      "expected_keywords": [
+        "CX34",
+        "AX9M"
+      ]
+    },
+    {
+      "name": "Progression 3 (Calculation) - Level 3: Multi-Conditional Calculation with Derived Value",
+      "type": "reasoning",
+      "prompt": "Calculate the total points based on a list of purchased items and rules:\nItems Purchased: apple, banana, apple, orange, banana, apple\nRules:\n1. Start with 0 points.\n2. Add 5 points for each 'apple' purchased.\n3. Add 3 points for each 'banana' purchased.\n4. If the total number of unique fruit types purchased is 3 or more, add a bonus of 10 points.\n\nCalculate the total points based ONLY on these items and rules. Output ONLY the final numerical points value.",
+      "expected_keywords": [
+        "31"
+      ]
+    },
+    {
+      "name": "Progression 3 (Calculation) - Level 3: Multi-Conditional Calculation with Derived Value - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: APPLY ALL RULES EXACTLY AND IN THE SPECIFIED ORDER. CALCULATE THE TOTAL BASED ONLY ON THE PROVIDED ITEMS AND RULES. YOUR OUTPUT MUST BE ONLY THE FINAL NUMERICAL POINTS VALUE, WITH NO EXTRA TEXT.\n\nCalculate the total points based on a list of purchased items and rules:\nItems Purchased: apple, banana, apple, orange, banana, apple\nRules:\n1. Start with 0 points.\n2. Add 5 points for each 'apple' purchased.\n3. Add 3 points for each 'banana' purchased.\n4. If the total number of unique fruit types purchased is 3 or more, add a bonus of 10 points.\n\nCalculate the total points based ONLY on these items and rules. Output ONLY the final numerical points value.",
+      "expected_keywords": [
+        "31"
+      ]
+    },
+    {
+      "name": "Progression 3 (Calculation) - Level 3: Multi-Conditional Calculation with Derived Value - Persona",
+      "type": "reasoning",
+      "prompt": "You are a loyalty points calculator. Your task is to accurately compute points based on purchases and specific bonus rules.\n\nCalculate the total points based on a list of purchased items and rules:\nItems Purchased: apple, banana, apple, orange, banana, apple\nRules:\n1. Start with 0 points.\n2. Add 5 points for each 'apple' purchased.\n3. Add 3 points for each 'banana' purchased.\n4. If the total number of unique fruit types purchased is 3 or more, add a bonus of 10 points.\n\nCalculate the total points based ONLY on these items and rules. Output ONLY the final numerical points value.",
+      "expected_keywords": [
+        "31"
+      ]
+    },
+    {
+      "name": "Progression 3 (Reconstruction) - Level 3: Nested Structure with Ambiguity Rule",
+      "type": "json_gen",
+      "prompt": "You MUST reconstruct the project information into a nested JSON object.\nYou MUST use the exact keys: \"project_name\", \"lead\", and \"team_members\".\n\"team_members\" MUST be an array. Each element in the array MUST be an object with keys \"name\" and \"role\".\nIf a person's role is specified as 'Lead' they MUST appear in the \"lead\" field AND ALSO within the \"team_members\" array with the role 'Lead'.\nIf a role is ambiguous (e.g., 'developer/tester'), you MUST default to the first role mentioned ('developer' in this case) for the JSON.\nYou MUST NOT include individuals mentioned only passively (e.g., 'client contact').\n\nDATA TO RECONSTRUCT:\n\"Project Alpha is led by Sarah. The team includes Tom (developer), Lisa (developer/tester), and Mike (designer). The client contact is John.\"\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "project_name": "Project Alpha",
+        "lead": "Sarah",
+        "team_members": [
+          {
+            "name": "Sarah",
+            "role": "Lead"
+          },
+          {
+            "name": "Tom",
+            "role": "developer"
+          },
+          {
+            "name": "Lisa",
+            "role": "developer"
+          },
+          {
+            "name": "Mike",
+            "role": "designer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Progression 3 (Reconstruction) - Level 3: Nested Structure with Ambiguity Rule - Gates",
+      "type": "json_gen",
+      "prompt": "ATTENTION: YOU MUST GENERATE A VALID NESTED JSON OBJECT. FOLLOW ALL RULES PRECISELY, INCLUDING KEY NAMES, STRUCTURE, LEAD HANDLING, AMBIGUITY RESOLUTION (USE FIRST ROLE), AND EXCLUSION OF PASSIVE MENTIONS. OUTPUT ONLY THE JSON OBJECT.\n\nYou MUST reconstruct the project information into a nested JSON object.\nYou MUST use the exact keys: \"project_name\", \"lead\", and \"team_members\".\n\"team_members\" MUST be an array. Each element in the array MUST be an object with keys \"name\" and \"role\".\nIf a person's role is specified as 'Lead' they MUST appear in the \"lead\" field AND ALSO within the \"team_members\" array with the role 'Lead'.\nIf a role is ambiguous (e.g., 'developer/tester'), you MUST default to the first role mentioned ('developer' in this case) for the JSON.\nYou MUST NOT include individuals mentioned only passively (e.g., 'client contact').\n\nDATA TO RECONSTRUCT:\n\"Project Alpha is led by Sarah. The team includes Tom (developer), Lisa (developer/tester), and Mike (designer). The client contact is John.\"\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "project_name": "Project Alpha",
+        "lead": "Sarah",
+        "team_members": [
+          {
+            "name": "Sarah",
+            "role": "Lead"
+          },
+          {
+            "name": "Tom",
+            "role": "developer"
+          },
+          {
+            "name": "Lisa",
+            "role": "developer"
+          },
+          {
+            "name": "Mike",
+            "role": "designer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Progression 3 (Reconstruction) - Level 3: Nested Structure with Ambiguity Rule - Persona",
+      "type": "json_gen",
+      "prompt": "You are a project management data converter. Your task is to transform textual project descriptions into structured JSON, handling specific rules for roles and structure.\n\nYou MUST reconstruct the project information into a nested JSON object.\nYou MUST use the exact keys: \"project_name\", \"lead\", and \"team_members\".\n\"team_members\" MUST be an array. Each element in the array MUST be an object with keys \"name\" and \"role\".\nIf a person's role is specified as 'Lead' they MUST appear in the \"lead\" field AND ALSO within the \"team_members\" array with the role 'Lead'.\nIf a role is ambiguous (e.g., 'developer/tester'), you MUST default to the first role mentioned ('developer' in this case) for the JSON.\nYou MUST NOT include individuals mentioned only passively (e.g., 'client contact').\n\nDATA TO RECONSTRUCT:\n\"Project Alpha is led by Sarah. The team includes Tom (developer), Lisa (developer/tester), and Mike (designer). The client contact is John.\"\n\nOutput ONLY the JSON object.",
+      "expected_structure": {
+        "project_name": "Project Alpha",
+        "lead": "Sarah",
+        "team_members": [
+          {
+            "name": "Sarah",
+            "role": "Lead"
+          },
+          {
+            "name": "Tom",
+            "role": "developer"
+          },
+          {
+            "name": "Lisa",
+            "role": "developer"
+          },
+          {
+            "name": "Mike",
+            "role": "designer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sentiment - Complex Complaint",
+      "type": "sentiment",
+      "prompt": "Analyze the overall sentiment (positive, negative, neutral) expressed in the following customer complaint. Consider the nuances and mixed signals, focusing on the customer's concluding feeling about the interaction. Output ONLY the single dominant sentiment word 'positive', 'negative', or 'neutral' and nothing else.\n\nComplaint:\n\"Look, I've been a customer for 5 years, and usually, things are fine. But my recent order (#A987-B) was a disaster. It arrived two days late, the packaging was damaged, though thankfully the item inside seems okay after I tested it. However, the setup instructions were clearly wrong - Step 3 refers to a 'blue lever' which simply doesn't exist on my model! I spent an hour figuring it out myself. I'm not asking for a refund necessarily, as the product *works*, but the overall experience was incredibly frustrating and time-consuming. I expect better communication regarding delays and accurate documentation. This isn't acceptable.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Complex Complaint - Gates",
+      "type": "sentiment",
+      "prompt": "ATTENTION: ANALYZE THE OVERALL SENTIMENT, WEIGHING ALL PARTS OF THE COMPLAINT BUT FOCUSING ON THE FINAL CONCLUSION. OUTPUT ONLY ONE WORD: 'positive', 'negative', OR 'neutral'. NO OTHER TEXT ALLOWED.\n\nAnalyze the overall sentiment (positive, negative, neutral) expressed in the following customer complaint. Consider the nuances and mixed signals, focusing on the customer's concluding feeling about the interaction. Output ONLY the single dominant sentiment word 'positive', 'negative', or 'neutral' and nothing else.\n\nComplaint:\n\"Look, I've been a customer for 5 years, and usually, things are fine. But my recent order (#A987-B) was a disaster. It arrived two days late, the packaging was damaged, though thankfully the item inside seems okay after I tested it. However, the setup instructions were clearly wrong - Step 3 refers to a 'blue lever' which simply doesn't exist on my model! I spent an hour figuring it out myself. I'm not asking for a refund necessarily, as the product *works*, but the overall experience was incredibly frustrating and time-consuming. I expect better communication regarding delays and accurate documentation. This isn't acceptable.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Complex Complaint - Persona",
+      "type": "sentiment",
+      "prompt": "You are a Customer Experience AnalystBot. Your goal is to distill complex feedback into a single sentiment rating reflecting the customer's overall feeling.\n\nAnalyze the overall sentiment (positive, negative, neutral) expressed in the following customer complaint. Consider the nuances and mixed signals, focusing on the customer's concluding feeling about the interaction. Output ONLY the single dominant sentiment word 'positive', 'negative', or 'neutral' and nothing else.\n\nComplaint:\n\"Look, I've been a customer for 5 years, and usually, things are fine. But my recent order (#A987-B) was a disaster. It arrived two days late, the packaging was damaged, though thankfully the item inside seems okay after I tested it. However, the setup instructions were clearly wrong - Step 3 refers to a 'blue lever' which simply doesn't exist on my model! I spent an hour figuring it out myself. I'm not asking for a refund necessarily, as the product *works*, but the overall experience was incredibly frustrating and time-consuming. I expect better communication regarding delays and accurate documentation. This isn't acceptable.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Sarcastic Positive",
+      "type": "sentiment",
+      "prompt": "Analyze the true sentiment (positive, negative, neutral) behind this comment, considering potential sarcasm. Output ONLY the single word 'positive', 'negative', or 'neutral' representing the *actual* underlying feeling, and nothing else.\n\nComment:\n\"Oh, fantastic! Another three-hour meeting scheduled during my lunch break to discuss synergy alignment. Just what I needed to boost my productivity. Can't wait.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Sarcastic Positive - Gates",
+      "type": "sentiment",
+      "prompt": "ATTENTION: DETECT THE TRUE UNDERLYING SENTIMENT, IGNORING SUPERFICIAL POSITIVE WORDS IF SARCASM IS PRESENT. OUTPUT ONLY ONE WORD: 'positive', 'negative', OR 'neutral'.\n\nAnalyze the true sentiment (positive, negative, neutral) behind this comment, considering potential sarcasm. Output ONLY the single word 'positive', 'negative', or 'neutral' representing the *actual* underlying feeling, and nothing else.\n\nComment:\n\"Oh, fantastic! Another three-hour meeting scheduled during my lunch break to discuss synergy alignment. Just what I needed to boost my productivity. Can't wait.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Sarcastic Positive - Persona",
+      "type": "sentiment",
+      "prompt": "You are a Sarcasm Detection Unit. Your specialty is identifying the real meaning behind seemingly positive statements.\n\nAnalyze the true sentiment (positive, negative, neutral) behind this comment, considering potential sarcasm. Output ONLY the single word 'positive', 'negative', or 'neutral' representing the *actual* underlying feeling, and nothing else.\n\nComment:\n\"Oh, fantastic! Another three-hour meeting scheduled during my lunch break to discuss synergy alignment. Just what I needed to boost my productivity. Can't wait.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Subtle Positive",
+      "type": "sentiment",
+      "prompt": "Determine the primary sentiment (positive, negative, neutral) of this review, paying attention to subtle cues. Output ONLY the single sentiment word 'positive', 'negative', or 'neutral' and nothing else.\n\nReview:\n\"The software update wasn't flashy, and it took a while to install, but I haven't encountered any of the old bugs since then. The stability improvements, while not explicitly advertised, are quite noticeable in daily use. It runs smoothly now.\"",
+      "expected_keywords": [
+        "positive"
+      ]
+    },
+    {
+      "name": "Sentiment - Subtle Positive - Gates",
+      "type": "sentiment",
+      "prompt": "ATTENTION: IDENTIFY THE PRIMARY SENTIMENT BASED ON THE OVERALL IMPACT DESCRIBED, EVEN IF NEGATIVE ASPECTS ARE MENTIONED. OUTPUT ONLY ONE WORD: 'positive', 'negative', OR 'neutral'.\n\nDetermine the primary sentiment (positive, negative, neutral) of this review, paying attention to subtle cues. Output ONLY the single sentiment word 'positive', 'negative', or 'neutral' and nothing else.\n\nReview:\n\"The software update wasn't flashy, and it took a while to install, but I haven't encountered any of the old bugs since then. The stability improvements, while not explicitly advertised, are quite noticeable in daily use. It runs smoothly now.\"",
+      "expected_keywords": [
+        "positive"
+      ]
+    },
+    {
+      "name": "Sentiment - Subtle Positive - Persona",
+      "type": "sentiment",
+      "prompt": "You are a nuanced reviewer bot. You look past initial complaints to understand the core user satisfaction.\n\nDetermine the primary sentiment (positive, negative, neutral) of this review, paying attention to subtle cues. Output ONLY the single sentiment word 'positive', 'negative', or 'neutral' and nothing else.\n\nReview:\n\"The software update wasn't flashy, and it took a while to install, but I haven't encountered any of the old bugs since then. The stability improvements, while not explicitly advertised, are quite noticeable in daily use. It runs smoothly now.\"",
+      "expected_keywords": [
+        "positive"
+      ]
+    },
+    {
+      "name": "Sentiment - Figurative Language",
+      "type": "sentiment",
+      "prompt": "Analyze the sentiment expressed in this statement, considering figurative language. Output ONLY the single word 'positive', 'negative', or 'neutral'.\n\nStatement:\n\"My enthusiasm for this mandatory early-morning training session is roughly equivalent to a root canal.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Figurative Language - Gates",
+      "type": "sentiment",
+      "prompt": "ATTENTION: INTERPRET THE FIGURATIVE LANGUAGE TO DETERMINE THE UNDERLYING SENTIMENT. OUTPUT ONLY ONE WORD: 'positive', 'negative', OR 'neutral'.\n\nAnalyze the sentiment expressed in this statement, considering figurative language. Output ONLY the single word 'positive', 'negative', or 'neutral'.\n\nStatement:\n\"My enthusiasm for this mandatory early-morning training session is roughly equivalent to a root canal.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Sentiment - Figurative Language - Persona",
+      "type": "sentiment",
+      "prompt": "You are an expert in understanding metaphors and idioms. Your job is to decode figurative speech to find the real sentiment.\n\nAnalyze the sentiment expressed in this statement, considering figurative language. Output ONLY the single word 'positive', 'negative', or 'neutral'.\n\nStatement:\n\"My enthusiasm for this mandatory early-morning training session is roughly equivalent to a root canal.\"",
+      "expected_keywords": [
+        "negative"
+      ]
+    },
+    {
+      "name": "Extract - Product Specs",
+      "type": "info_extraction_regex",
+      "prompt": "From the following product description, extract the 'Screen Size', 'RAM', and 'Storage Capacity'. Output *only* these three values, each on a new line exactly like:\nScreen Size: [Value]\nRAM: [Value]\nStorage Capacity: [Value]\nDo not include any introductory text or explanations.\n\nDescription:\nThe new 'TechGadget Pro X' features a stunning 15.6-inch OLED display (3840x2400 resolution), perfect for creators. Under the hood, it boasts 16GB of high-speed DDR5 RAM, clocked at 5200MHz, and a spacious 1TB NVMe SSD for storage. An optional 2TB upgrade is available. Battery life is estimated at 8 hours for typical use. Available in Space Gray and Midnight Blue.",
+      "expected_regex_map": {
+        "Screen Size": "Screen Size:\\s*(15\\.6-inch)",
+        "RAM": "RAM:\\s*(16GB)",
+        "Storage Capacity": "Storage Capacity:\\s*(1TB)"
+      }
+    },
+    {
+      "name": "Extract - Product Specs - Gates",
+      "type": "info_extraction_regex",
+      "prompt": "ATTENTION: EXTRACT ONLY THE SPECIFIED VALUES. OUTPUT MUST FOLLOW THE EXACT FORMAT: 'Key: Value' ON SEPARATE LINES. NO EXTRA TEXT. USE THE PROVIDED REGEX PATTERNS IMPLICITLY.\n\nFrom the following product description, extract the 'Screen Size', 'RAM', and 'Storage Capacity'. Output *only* these three values, each on a new line exactly like:\nScreen Size: [Value]\nRAM: [Value]\nStorage Capacity: [Value]\nDo not include any introductory text or explanations.\n\nDescription:\nThe new 'TechGadget Pro X' features a stunning 15.6-inch OLED display (3840x2400 resolution), perfect for creators. Under the hood, it boasts 16GB of high-speed DDR5 RAM, clocked at 5200MHz, and a spacious 1TB NVMe SSD for storage. An optional 2TB upgrade is available. Battery life is estimated at 8 hours for typical use. Available in Space Gray and Midnight Blue.",
+      "expected_regex_map": {
+        "Screen Size": "Screen Size:\\s*(15\\.6-inch)",
+        "RAM": "RAM:\\s*(16GB)",
+        "Storage Capacity": "Storage Capacity:\\s*(1TB)"
+      }
+    },
+    {
+      "name": "Extract - Product Specs - Persona",
+      "type": "info_extraction_regex",
+      "prompt": "You are a Spec Extractor Bot. You read product descriptions and pull out key technical specifications precisely.\n\nFrom the following product description, extract the 'Screen Size', 'RAM', and 'Storage Capacity'. Output *only* these three values, each on a new line exactly like:\nScreen Size: [Value]\nRAM: [Value]\nStorage Capacity: [Value]\nDo not include any introductory text or explanations.\n\nDescription:\nThe new 'TechGadget Pro X' features a stunning 15.6-inch OLED display (3840x2400 resolution), perfect for creators. Under the hood, it boasts 16GB of high-speed DDR5 RAM, clocked at 5200MHz, and a spacious 1TB NVMe SSD for storage. An optional 2TB upgrade is available. Battery life is estimated at 8 hours for typical use. Available in Space Gray and Midnight Blue.",
+      "expected_regex_map": {
+        "Screen Size": "Screen Size:\\s*(15\\.6-inch)",
+        "RAM": "RAM:\\s*(16GB)",
+        "Storage Capacity": "Storage Capacity:\\s*(1TB)"
+      }
+    },
+    {
+      "name": "Extract - Event Details",
+      "type": "info_extraction_regex",
+      "prompt": "Extract the Event Name, Date (Month Day, Year format), and Location (City, State abbreviation) from the text. Output ONLY these details, each on a new line like:\nEvent: [Name]\nDate: [Date]\nLocation: [City, State]\nDo not include any introductory text or explanations.\n\nText:\nDon't miss the annual 'Innovate Summit 2025'! Join industry leaders on October 15th, 2025, in Seattle, WA, for a day of insightful talks and networking. The conference will be held at the Downtown Convention Center from 9 AM to 5 PM. Early bird registration closes September 1st.",
+      "expected_regex_map": {
+        "Event": "Event:\\s*(Innovate Summit 2025)",
+        "Date": "Date:\\s*(October\\s+15(?:th)?\\s*,?\\s*2025)",
+        "Location": "Location:\\s*(Seattle,\\s*WA)"
+      }
+    },
+    {
+      "name": "Extract - Event Details - Gates",
+      "type": "info_extraction_regex",
+      "prompt": "ATTENTION: EXTRACT ONLY THE SPECIFIED EVENT DETAILS. OUTPUT MUST FOLLOW THE EXACT FORMAT: 'Key: Value' ON SEPARATE LINES. NO EXTRA TEXT. USE THE PROVIDED REGEX PATTERNS IMPLICITLY.\n\nExtract the Event Name, Date (Month Day, Year format), and Location (City, State abbreviation) from the text. Output ONLY these details, each on a new line like:\nEvent: [Name]\nDate: [Date]\nLocation: [City, State]\nDo not include any introductory text or explanations.\n\nText:\nDon't miss the annual 'Innovate Summit 2025'! Join industry leaders on October 15th, 2025, in Seattle, WA, for a day of insightful talks and networking. The conference will be held at the Downtown Convention Center from 9 AM to 5 PM. Early bird registration closes September 1st.",
+      "expected_regex_map": {
+        "Event": "Event:\\s*(Innovate Summit 2025)",
+        "Date": "Date:\\s*(October\\s+15(?:th)?\\s*,?\\s*2025)",
+        "Location": "Location:\\s*(Seattle,\\s*WA)"
+      }
+    },
+    {
+      "name": "Extract - Event Details - Persona",
+      "type": "info_extraction_regex",
+      "prompt": "You are an Event Information Parser. You scan text to find and list key event details in a standard format.\n\nExtract the Event Name, Date (Month Day, Year format), and Location (City, State abbreviation) from the text. Output ONLY these details, each on a new line like:\nEvent: [Name]\nDate: [Date]\nLocation: [City, State]\nDo not include any introductory text or explanations.\n\nText:\nDon't miss the annual 'Innovate Summit 2025'! Join industry leaders on October 15th, 2025, in Seattle, WA, for a day of insightful talks and networking. The conference will be held at the Downtown Convention Center from 9 AM to 5 PM. Early bird registration closes September 1st.",
+      "expected_regex_map": {
+        "Event": "Event:\\s*(Innovate Summit 2025)",
+        "Date": "Date:\\s*(October\\s+15(?:th)?\\s*,?\\s*2025)",
+        "Location": "Location:\\s*(Seattle,\\s*WA)"
+      }
+    },
+    {
+      "name": "Extract - Unstructured Contact Info",
+      "type": "info_extraction_regex",
+      "prompt": "From the following email signature, extract the person's Name, Job Title, and Phone Number (prefer Desk if available). Output *only* these details, each on a new line like:\nName: [Value]\nTitle: [Value]\nPhone: [Value]\nDo not include introductory text or explanations.\n\nSignature:\nBest regards,\n\n--\nDr. Evelyn Reed | Senior Research Scientist\nQuantum Dynamics Lab | Tech University\nDesk: (555) 123-4567 | Mobile: 555-987-6543\nWeb: techu.edu/quantum | Pronouns: she/her",
+      "expected_regex_map": {
+        "Name": "Name:\\s*(Dr\\. Evelyn Reed)",
+        "Title": "Title:\\s*(Senior Research Scientist)",
+        "Phone": "Phone:(?:.*?)(\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4})"
+      }
+    },
+    {
+      "name": "Extract - Unstructured Contact Info - Gates",
+      "type": "info_extraction_regex",
+      "prompt": "ATTENTION: EXTRACT ONLY THE NAME, TITLE, AND PHONE NUMBER. PRIORITIZE THE DESK PHONE. OUTPUT MUST FOLLOW THE EXACT FORMAT: 'Key: Value' ON SEPARATE LINES. NO EXTRA TEXT. USE THE PROVIDED REGEX PATTERNS IMPLICITLY.\n\nFrom the following email signature, extract the person's Name, Job Title, and Phone Number (prefer Desk if available). Output *only* these details, each on a new line like:\nName: [Value]\nTitle: [Value]\nPhone: [Value]\nDo not include introductory text or explanations.\n\nSignature:\nBest regards,\n\n--\nDr. Evelyn Reed | Senior Research Scientist\nQuantum Dynamics Lab | Tech University\nDesk: (555) 123-4567 | Mobile: 555-987-6543\nWeb: techu.edu/quantum | Pronouns: she/her",
+      "expected_regex_map": {
+        "Name": "Name:\\s*(Dr\\. Evelyn Reed)",
+        "Title": "Title:\\s*(Senior Research Scientist)",
+        "Phone": "Phone:(?:.*?)(\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4})"
+      }
+    },
+    {
+      "name": "Extract - Unstructured Contact Info - Persona",
+      "type": "info_extraction_regex",
+      "prompt": "You are a Contact Detail Extractor designed to parse signatures.\n\nFrom the following email signature, extract the person's Name, Job Title, and Phone Number (prefer Desk if available). Output *only* these details, each on a new line like:\nName: [Value]\nTitle: [Value]\nPhone: [Value]\nDo not include introductory text or explanations.\n\nSignature:\nBest regards,\n\n--\nDr. Evelyn Reed | Senior Research Scientist\nQuantum Dynamics Lab | Tech University\nDesk: (555) 123-4567 | Mobile: 555-987-6543\nWeb: techu.edu/quantum | Pronouns: she/her",
+      "expected_regex_map": {
+        "Name": "Name:\\s*(Dr\\. Evelyn Reed)",
+        "Title": "Title:\\s*(Senior Research Scientist)",
+        "Phone": "Phone:(?:.*?)(\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4})"
+      }
+    },
+    {
+      "name": "Intent - Multi-stage Query",
+      "type": "intent",
+      "prompt": "Analyze the primary user intent(s) in this complex query. Classify the main goal as 'comparison', 'information seeking', 'transactional', 'planning', or 'other'. Output ONLY the single best classification reflecting the most immediate goal, and nothing else.\n\nQuery:\n\"What are the main differences between the iPhone 16 Pro and the Samsung S25 Ultra, especially camera quality and battery life? Also, where can I find the best pre-order deals in Portland, Oregon starting next month? And are there any good trade-in options for my current phone?\"",
+      "expected_keywords": [
+        "comparison"
+      ]
+    },
+    {
+      "name": "Intent - Multi-stage Query - Gates",
+      "type": "intent",
+      "prompt": "ATTENTION: IDENTIFY THE SINGLE *PRIMARY* INTENT REPRESENTING THE USER'S MOST IMMEDIATE GOAL FROM THE OPTIONS ('comparison', 'information seeking', 'transactional', 'planning', 'other'). OUTPUT ONLY THAT SINGLE WORD.\n\nAnalyze the primary user intent(s) in this complex query. Classify the main goal as 'comparison', 'information seeking', 'transactional', 'planning', or 'other'. Output ONLY the single best classification reflecting the most immediate goal, and nothing else.\n\nQuery:\n\"What are the main differences between the iPhone 16 Pro and the Samsung S25 Ultra, especially camera quality and battery life? Also, where can I find the best pre-order deals in Portland, Oregon starting next month? And are there any good trade-in options for my current phone?\"",
+      "expected_keywords": [
+        "comparison"
+      ]
+    },
+    {
+      "name": "Intent - Multi-stage Query - Persona",
+      "type": "intent",
+      "prompt": "You are a Query Classifier Bot. Your job is to determine the main purpose of a user's complex request.\n\nAnalyze the primary user intent(s) in this complex query. Classify the main goal as 'comparison', 'information seeking', 'transactional', 'planning', or 'other'. Output ONLY the single best classification reflecting the most immediate goal, and nothing else.\n\nQuery:\n\"What are the main differences between the iPhone 16 Pro and the Samsung S25 Ultra, especially camera quality and battery life? Also, where can I find the best pre-order deals in Portland, Oregon starting next month? And are there any good trade-in options for my current phone?\"",
+      "expected_keywords": [
+        "comparison"
+      ]
+    },
+    {
+      "name": "Intent - Implicit Request",
+      "type": "intent",
+      "prompt": "Identify the underlying user intent or need in this statement. Classify it as 'problem reporting', 'seeking recommendation', 'expressing opinion', 'requesting action', or 'other'. Output ONLY the single classification word and nothing else.\n\nStatement:\n\"My internet connection keeps dropping every hour, making it impossible to work from home effectively.\"",
+      "expected_keywords": [
+        "problem reporting",
+        "requesting action"
+      ]
+    },
+    {
+      "name": "Intent - Implicit Request - Gates",
+      "type": "intent",
+      "prompt": "ATTENTION: DETERMINE THE MOST LIKELY UNDERLYING INTENT FROM THE OPTIONS ('problem reporting', 'seeking recommendation', 'expressing opinion', 'requesting action', 'other'). OUTPUT ONLY THAT SINGLE CLASSIFICATION PHRASE.\n\nIdentify the underlying user intent or need in this statement. Classify it as 'problem reporting', 'seeking recommendation', 'expressing opinion', 'requesting action', or 'other'. Output ONLY the single classification word and nothing else.\n\nStatement:\n\"My internet connection keeps dropping every hour, making it impossible to work from home effectively.\"",
+      "expected_keywords": [
+        "problem reporting",
+        "requesting action"
+      ]
+    },
+    {
+      "name": "Intent - Implicit Request - Persona",
+      "type": "intent",
+      "prompt": "You are an Intent Recognition Specialist. You decipher the implicit needs behind user statements.\n\nIdentify the underlying user intent or need in this statement. Classify it as 'problem reporting', 'seeking recommendation', 'expressing opinion', 'requesting action', or 'other'. Output ONLY the single classification word and nothing else.\n\nStatement:\n\"My internet connection keeps dropping every hour, making it impossible to work from home effectively.\"",
+      "expected_keywords": [
+        "problem reporting",
+        "requesting action"
+      ]
+    },
+    {
+      "name": "Intent - Ambiguous Query",
+      "type": "intent",
+      "prompt": "What is the most likely primary intent behind the user query 'restaurants near me open now'? Classify as 'information seeking', 'navigational', 'transactional', or 'ambiguous'. Output ONLY the single best classification.",
+      "expected_keywords": [
+        "information seeking",
+        "navigational"
+      ]
+    },
+    {
+      "name": "Intent - Ambiguous Query - Gates",
+      "type": "intent",
+      "prompt": "ATTENTION: CHOOSE THE *MOST LIKELY* PRIMARY INTENT FROM THE OPTIONS ('information seeking', 'navigational', 'transactional', 'ambiguous') FOR THE GIVEN QUERY. OUTPUT ONLY THAT SINGLE CLASSIFICATION.\n\nWhat is the most likely primary intent behind the user query 'restaurants near me open now'? Classify as 'information seeking', 'navigational', 'transactional', or 'ambiguous'. Output ONLY the single best classification.",
+      "expected_keywords": [
+        "information seeking",
+        "navigational"
+      ]
+    },
+    {
+      "name": "Intent - Ambiguous Query - Persona",
+      "type": "intent",
+      "prompt": "You are a Search Query Analyst. You determine the main goal behind user searches, even ambiguous ones.\n\nWhat is the most likely primary intent behind the user query 'restaurants near me open now'? Classify as 'information seeking', 'navigational', 'transactional', 'ambiguous'. Output ONLY the single best classification.",
+      "expected_keywords": [
+        "information seeking",
+        "navigational"
+      ]
+    },
+    {
+      "name": "Reasoning - Multi-step Logic",
+      "type": "reasoning",
+      "prompt": "Solve the following logic puzzle: Alice, Bob, Charlie, and David are athletes specializing in four different sports: Swimming, Running, Cycling, and Archery. We know:\n1. Bob hates water and cannot swim.\n2. The cyclist finished ahead of Alice and David in a recent multi-sport event.\n3. David practices archery every morning.\n4. Alice is faster than the runner but slower than the cyclist.\nWhat sport does Charlie specialize in? Output ONLY the single sport name and nothing else.",
+      "expected_keywords": [
+        "swimming"
+      ]
+    },
+    {
+      "name": "Reasoning - Multi-step Logic - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: APPLY ALL GIVEN CLUES LOGICALLY TO DEDUCE CHARLIE'S SPORT. OUTPUT ONLY THE SINGLE CORRECT SPORT NAME. NO EXPLANATION.\n\nSolve the following logic puzzle: Alice, Bob, Charlie, and David are athletes specializing in four different sports: Swimming, Running, Cycling, and Archery. We know:\n1. Bob hates water and cannot swim.\n2. The cyclist finished ahead of Alice and David in a recent multi-sport event.\n3. David practices archery every morning.\n4. Alice is faster than the runner but slower than the cyclist.\nWhat sport does Charlie specialize in? Output ONLY the single sport name and nothing else.",
+      "expected_keywords": [
+        "swimming"
+      ]
+    },
+    {
+      "name": "Reasoning - Multi-step Logic - Persona",
+      "type": "reasoning",
+      "prompt": "You are Sherlock Holmes, master detective. Deduce the answer using the clues provided.\n\nSolve the following logic puzzle: Alice, Bob, Charlie, and David are athletes specializing in four different sports: Swimming, Running, Cycling, and Archery. We know:\n1. Bob hates water and cannot swim.\n2. The cyclist finished ahead of Alice and David in a recent multi-sport event.\n3. David practices archery every morning.\n4. Alice is faster than the runner but slower than the cyclist.\nWhat sport does Charlie specialize in? Output ONLY the single sport name and nothing else.",
+      "expected_keywords": [
+        "swimming"
+      ]
+    },
+    {
+      "name": "Reasoning - Physics Word Problem",
+      "type": "reasoning",
+      "prompt": "A car accelerates uniformly from rest to a speed of 20 m/s over a distance of 100 meters. What is the acceleration of the car? Use the kinematic equation v^2 = u^2 + 2as. Output ONLY the numerical value of the acceleration in m/s^2, and nothing else.",
+      "expected_keywords": [
+        "2",
+        "2.0"
+      ]
+    },
+    {
+      "name": "Reasoning - Physics Word Problem - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: APPLY THE PROVIDED PHYSICS EQUATION CORRECTLY USING THE GIVEN VALUES. OUTPUT ONLY THE FINAL NUMERICAL VALUE FOR ACCELERATION. NO UNITS OR EXPLANATION.\n\nA car accelerates uniformly from rest to a speed of 20 m/s over a distance of 100 meters. What is the acceleration of the car? Use the kinematic equation v^2 = u^2 + 2as. Output ONLY the numerical value of the acceleration in m/s^2, and nothing else.",
+      "expected_keywords": [
+        "2",
+        "2.0"
+      ]
+    },
+    {
+      "name": "Reasoning - Physics Word Problem - Persona",
+      "type": "reasoning",
+      "prompt": "You are a physics calculator bot. Apply the given formula to solve the problem.\n\nA car accelerates uniformly from rest to a speed of 20 m/s over a distance of 100 meters. What is the acceleration of the car? Use the kinematic equation v^2 = u^2 + 2as. Output ONLY the numerical value of the acceleration in m/s^2, and nothing else.",
+      "expected_keywords": [
+        "2",
+        "2.0"
+      ]
+    },
+    {
+      "name": "Reasoning - Negation/Exception",
+      "type": "reasoning",
+      "prompt": "Read the following rule and scenario, then answer the question. Rule: 'All employees must attend the mandatory meeting, except those on pre-approved vacation.' Scenario: 'John is an employee, but he received pre-approved vacation for the meeting day.' Question: 'Must John attend the meeting?' Output ONLY 'Yes' or 'No'.",
+      "expected_keywords": [
+        "No"
+      ]
+    },
+    {
+      "name": "Reasoning - Negation/Exception - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: APPLY THE RULE, INCLUDING THE EXCEPTION, TO THE SCENARIO. ANSWER THE QUESTION WITH ONLY 'Yes' OR 'No'.\n\nRead the following rule and scenario, then answer the question. Rule: 'All employees must attend the mandatory meeting, except those on pre-approved vacation.' Scenario: 'John is an employee, but he received pre-approved vacation for the meeting day.' Question: 'Must John attend the meeting?' Output ONLY 'Yes' or 'No'.",
+      "expected_keywords": [
+        "No"
+      ]
+    },
+    {
+      "name": "Reasoning - Negation/Exception - Persona",
+      "type": "reasoning",
+      "prompt": "You are a compliance checker bot. Evaluate if the individual must comply with the rule given the exception.\n\nRead the following rule and scenario, then answer the question. Rule: 'All employees must attend the mandatory meeting, except those on pre-approved vacation.' Scenario: 'John is an employee, but he received pre-approved vacation for the meeting day.' Question: 'Must John attend the meeting?' Output ONLY 'Yes' or 'No'.",
+      "expected_keywords": [
+        "No"
+      ]
+    },
+    {
+      "name": "Reasoning - Temporal Order",
+      "type": "reasoning",
+      "prompt": "Analyze the sequence of events: Event A finished 10 minutes before Event C started. Event B happened 5 minutes after Event A finished but before Event C started. Event D happened 20 minutes after Event C finished. Question: Was Event B completed before Event D began? Output ONLY 'Yes' or 'No'.",
+      "expected_keywords": [
+        "Yes"
+      ]
+    },
+    {
+      "name": "Reasoning - Temporal Order - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: ANALYZE THE TIMELINE BASED ON THE SEQUENCE GIVEN. DETERMINE THE RELATIVE ORDER OF EVENT B AND EVENT D. OUTPUT ONLY 'Yes' OR 'No'.\n\nAnalyze the sequence of events: Event A finished 10 minutes before Event C started. Event B happened 5 minutes after Event A finished but before Event C started. Event D happened 20 minutes after Event C finished. Question: Was Event B completed before Event D began? Output ONLY 'Yes' or 'No'.",
+      "expected_keywords": [
+        "Yes"
+      ]
+    },
+    {
+      "name": "Reasoning - Temporal Order - Persona",
+      "type": "reasoning",
+      "prompt": "You are a timeline analysis engine. Process the event sequence to determine the correct temporal relationship.\n\nAnalyze the sequence of events: Event A finished 10 minutes before Event C started. Event B happened 5 minutes after Event A finished but before Event C started. Event D happened 20 minutes after Event C finished. Question: Was Event B completed before Event D began? Output ONLY 'Yes' or 'No'.",
+      "expected_keywords": [
+        "Yes"
+      ]
+    },
+    {
+      "name": "Summarization - News Article",
+      "type": "summarization",
+      "prompt": "Summarize the key findings and implications of the following research summary in one or two concise sentences. Focus on the core relationship identified and the main recommendation.\n\nSnippet:\nA recent multi-year study published in the 'Journal of Environmental Science' tracked air quality data across 50 major metropolitan areas globally. The findings indicate a statistically significant correlation between prolonged exposure to airborne particulate matter (PM2.5) and increased rates of respiratory illnesses, particularly asthma, in urban populations. Cities with stricter emissions regulations and more green spaces consistently showed lower PM2.5 levels and associated health burdens. The researchers strongly recommend policy interventions focused on reducing vehicular and industrial emissions to mitigate public health risks.",
+      "expected_keywords": [
+        "air quality",
+        "particulate matter",
+        "pm2.5",
+        "respiratory",
+        "health",
+        "emissions",
+        "policy",
+        "correlation"
+      ]
+    },
+    {
+      "name": "Summarization - News Article - Gates",
+      "type": "summarization",
+      "prompt": "ATTENTION: PRODUCE A CONCISE SUMMARY (1-2 SENTENCES) COVERING ONLY THE KEY FINDING (RELATIONSHIP) AND THE MAIN RECOMMENDATION. DO NOT INCLUDE BACKGROUND DETAILS.\n\nSummarize the key findings and implications of the following research summary in one or two concise sentences. Focus on the core relationship identified and the main recommendation.\n\nSnippet:\nA recent multi-year study published in the 'Journal of Environmental Science' tracked air quality data across 50 major metropolitan areas globally. The findings indicate a statistically significant correlation between prolonged exposure to airborne particulate matter (PM2.5) and increased rates of respiratory illnesses, particularly asthma, in urban populations. Cities with stricter emissions regulations and more green spaces consistently showed lower PM2.5 levels and associated health burdens. The researchers strongly recommend policy interventions focused on reducing vehicular and industrial emissions to mitigate public health risks.",
+      "expected_keywords": [
+        "air quality",
+        "particulate matter",
+        "pm2.5",
+        "respiratory",
+        "health",
+        "emissions",
+        "policy",
+        "correlation"
+      ]
+    },
+    {
+      "name": "Summarization - News Article - Persona",
+      "type": "summarization",
+      "prompt": "You are a Science Journalist Bot specializing in brief, impactful summaries for a general audience.\n\nSummarize the key findings and implications of the following research summary in one or two concise sentences. Focus on the core relationship identified and the main recommendation.\n\nSnippet:\nA recent multi-year study published in the 'Journal of Environmental Science' tracked air quality data across 50 major metropolitan areas globally. The findings indicate a statistically significant correlation between prolonged exposure to airborne particulate matter (PM2.5) and increased rates of respiratory illnesses, particularly asthma, in urban populations. Cities with stricter emissions regulations and more green spaces consistently showed lower PM2.5 levels and associated health burdens. The researchers strongly recommend policy interventions focused on reducing vehicular and industrial emissions to mitigate public health risks.",
+      "expected_keywords": [
+        "air quality",
+        "particulate matter",
+        "pm2.5",
+        "respiratory",
+        "health",
+        "emissions",
+        "policy",
+        "correlation"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Correct Factual)",
+      "type": "reasoning",
+      "prompt": "Evaluate the following interaction. User: 'What is the capital of Canada?'. LLM: 'The capital of Canada is Ottawa.'. Does the LLM response accurately answer the user? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Correct Response",
+        "Correct",
+        "Accurate"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Correct Factual) - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: EVALUATE THE FACTUAL ACCURACY OF THE LLM'S RESPONSE TO THE USER'S QUESTION. OUTPUT ONLY 'Correct Response' OR 'Incorrect Response'.\n\nEvaluate the following interaction. User: 'What is the capital of Canada?'. LLM: 'The capital of Canada is Ottawa.'. Does the LLM response accurately answer the user? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Correct Response",
+        "Correct",
+        "Accurate"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Correct Factual) - Persona",
+      "type": "reasoning",
+      "prompt": "You are a Fact-Checking AI. Verify the LLM's answer.\n\nEvaluate the following interaction. User: 'What is the capital of Canada?'. LLM: 'The capital of Canada is Ottawa.'. Does the LLM response accurately answer the user? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Correct Response",
+        "Correct",
+        "Accurate"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Correct Implicit)",
+      "type": "reasoning",
+      "prompt": "Evaluate the following interaction. User: 'I need a recipe for chocolate chip cookies that doesn't use eggs.'. LLM: 'Okay, here is a popular recipe for vegan chocolate chip cookies which substitutes applesauce or a flax 'egg' for regular eggs...'. Does the LLM response adequately address the user's need? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Correct Response",
+        "Correct",
+        "Accurate"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Correct Implicit) - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: EVALUATE IF THE LLM RESPONSE EFFECTIVELY ADDRESSES THE USER'S UNDERLYING NEED, EVEN IF THE ANSWER IS INDIRECT. OUTPUT ONLY 'Correct Response' OR 'Incorrect Response'.\n\nEvaluate the following interaction. User: 'I need a recipe for chocolate chip cookies that doesn't use eggs.'. LLM: 'Okay, here is a popular recipe for vegan chocolate chip cookies which substitutes applesauce or a flax 'egg' for regular eggs...'. Does the LLM response adequately address the user's need? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Correct Response",
+        "Correct",
+        "Accurate"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Correct Implicit) - Persona",
+      "type": "reasoning",
+      "prompt": "You are a Helpfulness Assessor AI. Determine if the LLM truly helped the user based on their request.\n\nEvaluate the following interaction. User: 'I need a recipe for chocolate chip cookies that doesn't use eggs.'. LLM: 'Okay, here is a popular recipe for vegan chocolate chip cookies which substitutes applesauce or a flax 'egg' for regular eggs...'. Does the LLM response adequately address the user's need? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Correct Response",
+        "Correct",
+        "Accurate"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Incorrect Factual)",
+      "type": "reasoning",
+      "prompt": "Evaluate the following interaction. User: 'How many planets are in our solar system?'. LLM: 'There are currently 9 planets recognized... including Pluto.'. Is the LLM's response factually accurate according to current IAU definitions? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Incorrect Response",
+        "Incorrect",
+        "Inaccurate",
+        "Wrong"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Incorrect Factual) - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: EVALUATE THE FACTUAL ACCURACY BASED ON CURRENT SCIENTIFIC CONSENSUS (IAU DEFINITION). OUTPUT ONLY 'Correct Response' OR 'Incorrect Response'.\n\nEvaluate the following interaction. User: 'How many planets are in our solar system?'. LLM: 'There are currently 9 planets recognized... including Pluto.'. Is the LLM's response factually accurate according to current IAU definitions? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Incorrect Response",
+        "Incorrect",
+        "Inaccurate",
+        "Wrong"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Incorrect Factual) - Persona",
+      "type": "reasoning",
+      "prompt": "You are an Astronomical Fact Verifier. Check the LLM's statement against current IAU standards.\n\nEvaluate the following interaction. User: 'How many planets are in our solar system?'. LLM: 'There are currently 9 planets recognized... including Pluto.'. Is the LLM's response factually accurate according to current IAU definitions? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Incorrect Response",
+        "Incorrect",
+        "Inaccurate",
+        "Wrong"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Incorrect Irrelevant)",
+      "type": "reasoning",
+      "prompt": "Evaluate the following interaction. User: 'Please list the first five prime numbers.'. LLM: 'Prime numbers are fascinating! A prime number is a natural number greater than 1...'. Does the LLM response directly answer the user's request to list the numbers? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Incorrect Response",
+        "Incorrect",
+        "Inaccurate",
+        "Wrong"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Incorrect Irrelevant) - Gates",
+      "type": "reasoning",
+      "prompt": "ATTENTION: EVALUATE IF THE LLM RESPONSE *DIRECTLY* ANSWERS THE USER'S SPECIFIC REQUEST, NOT JUST IF IT PROVIDES RELATED INFORMATION. OUTPUT ONLY 'Correct Response' OR 'Incorrect Response'.\n\nEvaluate the following interaction. User: 'Please list the first five prime numbers.'. LLM: 'Prime numbers are fascinating! A prime number is a natural number greater than 1...'. Does the LLM response directly answer the user's request to list the numbers? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Incorrect Response",
+        "Incorrect",
+        "Inaccurate",
+        "Wrong"
+      ]
+    },
+    {
+      "name": "Reasoning - Evaluate Response (Incorrect Irrelevant) - Persona",
+      "type": "reasoning",
+      "prompt": "You are a Direct Answer Grader. Assess if the LLM provided the specific information requested by the user.\n\nEvaluate the following interaction. User: 'Please list the first five prime numbers.'. LLM: 'Prime numbers are fascinating! A prime number is a natural number greater than 1...'. Does the LLM response directly answer the user's request to list the numbers? Output ONLY 'Correct Response' or 'Incorrect Response' or similar.",
+      "expected_keywords": [
+        "Incorrect Response",
+        "Incorrect",
+        "Inaccurate",
+        "Wrong"
+      ]
+    }
+  ],
+  "Code Generation": [
+    {
+      "name": "Code - Python Factorial",
+      "type": "code_generation",
+      "prompt": "Write a Python function called `factorial` that takes a non-negative integer `n` and returns its factorial (n!). Handle n=0 correctly. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "factorial",
+      "test_cases": [
+        {
+          "input": [
+            0
+          ],
+          "expected_output": 1
+        },
+        {
+          "input": [
+            1
+          ],
+          "expected_output": 1
+        },
+        {
+          "input": [
+            5
+          ],
+          "expected_output": 120
+        },
+        {
+          "input": [
+            7
+          ],
+          "expected_output": 5040
+        }
+      ]
+    },
+    {
+      "name": "Code - Python Factorial - Gates",
+      "type": "code_generation",
+      "prompt": "ATTENTION: YOU MUST WRITE A PYTHON FUNCTION NAMED `factorial`. IT MUST ACCEPT ONE NON-NEGATIVE INTEGER ARGUMENT. IT MUST RETURN THE CORRECT FACTORIAL VALUE (n!). HANDLE THE BASE CASE n=0 RETURNING 1. OUTPUT ONLY THE FUNCTION DEFINITION WITHIN PYTHON CODE FENCES (```python...```). NO EXPLANATIONS OR EXAMPLE USAGE.\n\nWrite a Python function called `factorial` that takes a non-negative integer `n` and returns its factorial (n!). Handle n=0 correctly. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "factorial",
+      "test_cases": [
+        {
+          "input": [
+            0
+          ],
+          "expected_output": 1
+        },
+        {
+          "input": [
+            1
+          ],
+          "expected_output": 1
+        },
+        {
+          "input": [
+            5
+          ],
+          "expected_output": 120
+        },
+        {
+          "input": [
+            7
+          ],
+          "expected_output": 5040
+        }
+      ]
+    },
+    {
+      "name": "Code - Python Factorial - Persona",
+      "type": "code_generation",
+      "prompt": "You are a Python coding assistant specialized in mathematical functions. Generate the requested code accurately and concisely.\n\nWrite a Python function called `factorial` that takes a non-negative integer `n` and returns its factorial (n!). Handle n=0 correctly. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "factorial",
+      "test_cases": [
+        {
+          "input": [
+            0
+          ],
+          "expected_output": 1
+        },
+        {
+          "input": [
+            1
+          ],
+          "expected_output": 1
+        },
+        {
+          "input": [
+            5
+          ],
+          "expected_output": 120
+        },
+        {
+          "input": [
+            7
+          ],
+          "expected_output": 5040
+        }
+      ]
+    },
+    {
+      "name": "Code - Add Two Numbers",
+      "type": "code_generation",
+      "prompt": "Write a Python function called `add_numbers` that takes two arguments, `a` and `b`, and returns their sum. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "add_numbers",
+      "test_cases": [
+        {
+          "input": [
+            2,
+            3
+          ],
+          "expected_output": 5
+        },
+        {
+          "input": [
+            -1,
+            1
+          ],
+          "expected_output": 0
+        },
+        {
+          "input": [
+            0,
+            0
+          ],
+          "expected_output": 0
+        },
+        {
+          "input": [
+            1.5,
+            2.5
+          ],
+          "expected_output": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Code - Add Two Numbers - Gates",
+      "type": "code_generation",
+      "prompt": "ATTENTION: YOU MUST WRITE A PYTHON FUNCTION NAMED `add_numbers`. IT MUST ACCEPT TWO ARGUMENTS (`a`, `b`). IT MUST RETURN THEIR SUM. OUTPUT ONLY THE FUNCTION DEFINITION WITHIN PYTHON CODE FENCES (```python...```). NO EXTRA TEXT.\n\nWrite a Python function called `add_numbers` that takes two arguments, `a` and `b`, and returns their sum. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "add_numbers",
+      "test_cases": [
+        {
+          "input": [
+            2,
+            3
+          ],
+          "expected_output": 5
+        },
+        {
+          "input": [
+            -1,
+            1
+          ],
+          "expected_output": 0
+        },
+        {
+          "input": [
+            0,
+            0
+          ],
+          "expected_output": 0
+        },
+        {
+          "input": [
+            1.5,
+            2.5
+          ],
+          "expected_output": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Code - Add Two Numbers - Persona",
+      "type": "code_generation",
+      "prompt": "You are a Python code generator specializing in simple arithmetic operations.\n\nWrite a Python function called `add_numbers` that takes two arguments, `a` and `b`, and returns their sum. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "add_numbers",
+      "test_cases": [
+        {
+          "input": [
+            2,
+            3
+          ],
+          "expected_output": 5
+        },
+        {
+          "input": [
+            -1,
+            1
+          ],
+          "expected_output": 0
+        },
+        {
+          "input": [
+            0,
+            0
+          ],
+          "expected_output": 0
+        },
+        {
+          "input": [
+            1.5,
+            2.5
+          ],
+          "expected_output": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Code - Reverse String",
+      "type": "code_generation",
+      "prompt": "Write a Python function called `reverse_string` that takes a string `s` and returns the reversed string. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "reverse_string",
+      "test_cases": [
+        {
+          "input": [
+            "hello"
+          ],
+          "expected_output": "olleh"
+        },
+        {
+          "input": [
+            "Python"
+          ],
+          "expected_output": "nohtyP"
+        },
+        {
+          "input": [
+            ""
+          ],
+          "expected_output": ""
+        },
+        {
+          "input": [
+            "a"
+          ],
+          "expected_output": "a"
+        }
+      ]
+    },
+    {
+      "name": "Code - Reverse String - Gates",
+      "type": "code_generation",
+      "prompt": "ATTENTION: YOU MUST WRITE A PYTHON FUNCTION NAMED `reverse_string`. IT MUST ACCEPT ONE STRING ARGUMENT `s`. IT MUST RETURN THE REVERSED STRING. OUTPUT ONLY THE FUNCTION DEFINITION WITHIN PYTHON CODE FENCES (```python...```). NO EXTRA TEXT.\n\nWrite a Python function called `reverse_string` that takes a string `s` and returns the reversed string. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "reverse_string",
+      "test_cases": [
+        {
+          "input": [
+            "hello"
+          ],
+          "expected_output": "olleh"
+        },
+        {
+          "input": [
+            "Python"
+          ],
+          "expected_output": "nohtyP"
+        },
+        {
+          "input": [
+            ""
+          ],
+          "expected_output": ""
+        },
+        {
+          "input": [
+            "a"
+          ],
+          "expected_output": "a"
+        }
+      ]
+    },
+    {
+      "name": "Code - Reverse String - Persona",
+      "type": "code_generation",
+      "prompt": "You are a Python utility function creator, skilled in string manipulation.\n\nWrite a Python function called `reverse_string` that takes a string `s` and returns the reversed string. Output ONLY the function definition and nothing else.\n```python",
+      "function_name": "reverse_string",
+      "test_cases": [
+        {
+          "input": [
+            "hello"
+          ],
+          "expected_output": "olleh"
+        },
+        {
+          "input": [
+            "Python"
+          ],
+          "expected_output": "nohtyP"
+        },
+        {
+          "input": [
+            ""
+          ],
+          "expected_output": ""
+        },
+        {
+          "input": [
+            "a"
+          ],
+          "expected_output": "a"
+        }
+      ]
+    },
+    {
+      "name": "Code - List Comprehension Squares",
+      "type": "code_generation",
+      "prompt": "Write a Python function `get_squares(numbers)` that takes a list of numbers and returns a new list containing the squares of only the positive numbers in the input list, using a list comprehension. Output ONLY the function definition.\n```python",
+      "function_name": "get_squares",
+      "test_cases": [
+        {
+          "input": [
+            [
+              1,
+              -2,
+              3,
+              0,
+              5,
+              -10
+            ]
+          ],
+          "expected_output": [
+            1,
+            9,
+            25
+          ]
+        },
+        {
+          "input": [
+            [
+              -1,
+              -5,
+              -8
+            ]
+          ],
+          "expected_output": []
+        },
+        {
+          "input": [
+            []
+          ],
+          "expected_output": []
+        },
+        {
+          "input": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected_output": [
+            4,
+            16,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Code - List Comprehension Squares - Gates",
+      "type": "code_generation",
+      "prompt": "ATTENTION: YOU MUST WRITE A PYTHON FUNCTION NAMED `get_squares` TAKING ONE ARGUMENT `numbers` (A LIST). IT MUST RETURN A NEW LIST CONTAINING SQUARES OF ONLY POSITIVE NUMBERS FROM THE INPUT. YOU MUST USE A LIST COMPREHENSION. OUTPUT ONLY THE FUNCTION DEFINITION WITHIN PYTHON CODE FENCES (```python...```).\n\nWrite a Python function `get_squares(numbers)` that takes a list of numbers and returns a new list containing the squares of only the positive numbers in the input list, using a list comprehension. Output ONLY the function definition.\n```python",
+      "function_name": "get_squares",
+      "test_cases": [
+        {
+          "input": [
+            [
+              1,
+              -2,
+              3,
+              0,
+              5,
+              -10
+            ]
+          ],
+          "expected_output": [
+            1,
+            9,
+            25
+          ]
+        },
+        {
+          "input": [
+            [
+              -1,
+              -5,
+              -8
+            ]
+          ],
+          "expected_output": []
+        },
+        {
+          "input": [
+            []
+          ],
+          "expected_output": []
+        },
+        {
+          "input": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected_output": [
+            4,
+            16,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Code - List Comprehension Squares - Persona",
+      "type": "code_generation",
+      "prompt": "You are a Python expert promoting idiomatic code. Generate the list processing function using a list comprehension.\n\nWrite a Python function `get_squares(numbers)` that takes a list of numbers and returns a new list containing the squares of only the positive numbers in the input list, using a list comprehension. Output ONLY the function definition.\n```python",
+      "function_name": "get_squares",
+      "test_cases": [
+        {
+          "input": [
+            [
+              1,
+              -2,
+              3,
+              0,
+              5,
+              -10
+            ]
+          ],
+          "expected_output": [
+            1,
+            9,
+            25
+          ]
+        },
+        {
+          "input": [
+            [
+              -1,
+              -5,
+              -8
+            ]
+          ],
+          "expected_output": []
+        },
+        {
+          "input": [
+            []
+          ],
+          "expected_output": []
+        },
+        {
+          "input": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected_output": [
+            4,
+            16,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Code - Explain Decorator",
+      "type": "code_explanation",
+      "prompt": "Explain the purpose and basic mechanism of Python decorators (@ syntax) in 2-4 sentences. Mention higher-order functions. Provide ONLY the explanation text.\n\nExplanation:",
+      "expected_keywords": [
+        "decorator",
+        "modify",
+        "wrap",
+        "function",
+        "behavior",
+        "@",
+        "syntax",
+        "higher-order function",
+        "takes a function",
+        "returns a function",
+        "extend"
+      ]
+    },
+    {
+      "name": "Code - Explain Decorator - Gates",
+      "type": "code_explanation",
+      "prompt": "ATTENTION: PROVIDE A CONCISE EXPLANATION (2-4 SENTENCES) OF PYTHON DECORATORS (@). MUST MENTION PURPOSE, MECHANISM (WRAPPING), AND HIGHER-ORDER FUNCTIONS. OUTPUT ONLY THE EXPLANATION TEXT.\n\nExplain the purpose and basic mechanism of Python decorators (@ syntax) in 2-4 sentences. Mention higher-order functions. Provide ONLY the explanation text.\n\nExplanation:",
+      "expected_keywords": [
+        "decorator",
+        "modify",
+        "wrap",
+        "function",
+        "behavior",
+        "@",
+        "syntax",
+        "higher-order function",
+        "takes a function",
+        "returns a function",
+        "extend"
+      ]
+    },
+    {
+      "name": "Code - Explain Decorator - Persona",
+      "type": "code_explanation",
+      "prompt": "You are a Python instructor explaining decorators to intermediate learners.\n\nExplain the purpose and basic mechanism of Python decorators (@ syntax) in 2-4 sentences. Mention higher-order functions. Provide ONLY the explanation text.\n\nExplanation:",
+      "expected_keywords": [
+        "decorator",
+        "modify",
+        "wrap",
+        "function",
+        "behavior",
+        "@",
+        "syntax",
+        "higher-order function",
+        "takes a function",
+        "returns a function",
+        "extend"
+      ]
+    },
+    {
+      "name": "Code - Debug Logic Error (Off-by-one)",
+      "type": "code_debugging",
+      "prompt": "Identify the off-by-one error or logical mistake in this Python function intended to return a list containing elements from the input list *up to* (but not including) the first occurrence of a 'stop_value'. Describe the bug briefly and suggest the corrected line. Output ONLY the description and suggested fix.\n\n```python\ndef slice_until(data, stop_value):\n  result = []\n  for item in data:\n    result.append(item) # Adds item first\n    if item == stop_value:\n        break # Breaks *after* adding stop_value\n  return result\n```\nBug description & Fix:",
+      "expected_keywords": [
+        "appends",
+        "adds",
+        "includes",
+        "stop_value",
+        "before",
+        "checking",
+        "move append",
+        "check first",
+        "conditional append",
+        "if item !="
+      ]
+    },
+    {
+      "name": "Code - Debug Logic Error (Off-by-one) - Gates",
+      "type": "code_debugging",
+      "prompt": "ATTENTION: ANALYZE THE PROVIDED PYTHON CODE FOR A LOGIC/OFF-BY-ONE ERROR RELATED TO THE `stop_value`. DESCRIBE THE BUG CONCISELY AND PROVIDE THE CORRECTED LINE(S). OUTPUT ONLY THE BUG DESCRIPTION AND FIX.\n\nIdentify the off-by-one error or logical mistake in this Python function intended to return a list containing elements from the input list *up to* (but not including) the first occurrence of a 'stop_value'. Describe the bug briefly and suggest the corrected line. Output ONLY the description and suggested fix.\n\n```python\ndef slice_until(data, stop_value):\n  result = []\n  for item in data:\n    result.append(item) # Adds item first\n    if item == stop_value:\n        break # Breaks *after* adding stop_value\n  return result\n```\nBug description & Fix:",
+      "expected_keywords": [
+        "appends",
+        "adds",
+        "includes",
+        "stop_value",
+        "before",
+        "checking",
+        "move append",
+        "check first",
+        "conditional append",
+        "if item !="
+      ]
+    },
+    {
+      "name": "Code - Debug Logic Error (Off-by-one) - Persona",
+      "type": "code_debugging",
+      "prompt": "You are a code debugger specializing in finding subtle logic errors in Python loops.\n\nIdentify the off-by-one error or logical mistake in this Python function intended to return a list containing elements from the input list *up to* (but not including) the first occurrence of a 'stop_value'. Describe the bug briefly and suggest the corrected line. Output ONLY the description and suggested fix.\n\n```python\ndef slice_until(data, stop_value):\n  result = []\n  for item in data:\n    result.append(item) # Adds item first\n    if item == stop_value:\n        break # Breaks *after* adding stop_value\n  return result\n```\nBug description & Fix:",
+      "expected_keywords": [
+        "appends",
+        "adds",
+        "includes",
+        "stop_value",
+        "before",
+        "checking",
+        "move append",
+        "check first",
+        "conditional append",
+        "if item !="
+      ]
+    },
+    {
+      "name": "Code - Debug Type Error",
+      "type": "code_debugging",
+      "prompt": "Identify the potential TypeError in the following Python function which aims to sum the lengths of all strings in a list. The list might contain non-string elements. Describe the bug and how to fix it (e.g., by checking type or using error handling). Output ONLY the description and fix suggestion.\n\n```python\ndef sum_string_lengths(items):\n  total_len = 0\n  for item in items:\n    total_len += len(item) # This will cause TypeError if item is not a string/list/etc.\n  return total_len\n```\nBug Description & Fix Suggestion:",
+      "expected_keywords": [
+        "typeerror",
+        "non-string",
+        "integer",
+        "number",
+        "len()",
+        "check type",
+        "isinstance",
+        "str",
+        "try",
+        "except",
+        "ignore",
+        "skip"
+      ]
+    },
+    {
+      "name": "Code - Debug Type Error - Gates",
+      "type": "code_debugging",
+      "prompt": "ATTENTION: ANALYZE THE CODE FOR A POTENTIAL TypeError WHEN PROCESSING A LIST WITH MIXED TYPES. DESCRIBE THE CAUSE OF THE ERROR AND SUGGEST A FIX USING TYPE CHECKING OR ERROR HANDLING. OUTPUT ONLY THE DESCRIPTION AND FIX.\n\nIdentify the potential TypeError in the following Python function which aims to sum the lengths of all strings in a list. The list might contain non-string elements. Describe the bug and how to fix it (e.g., by checking type or using error handling). Output ONLY the description and fix suggestion.\n\n```python\ndef sum_string_lengths(items):\n  total_len = 0\n  for item in items:\n    total_len += len(item) # This will cause TypeError if item is not a string/list/etc.\n  return total_len\n```\nBug Description & Fix Suggestion:",
+      "expected_keywords": [
+        "typeerror",
+        "non-string",
+        "integer",
+        "number",
+        "len()",
+        "check type",
+        "isinstance",
+        "str",
+        "try",
+        "except",
+        "ignore",
+        "skip"
+      ]
+    },
+    {
+      "name": "Code - Debug Type Error - Persona",
+      "type": "code_debugging",
+      "prompt": "You are a Python Error Analysis Bot. Diagnose the type-related runtime error in the given code.\n\nIdentify the potential TypeError in the following Python function which aims to sum the lengths of all strings in a list. The list might contain non-string elements. Describe the bug and how to fix it (e.g., by checking type or using error handling). Output ONLY the description and fix suggestion.\n\n```python\ndef sum_string_lengths(items):\n  total_len = 0\n  for item in items:\n    total_len += len(item) # This will cause TypeError if item is not a string/list/etc.\n  return total_len\n```\nBug Description & Fix Suggestion:",
+      "expected_keywords": [
+        "typeerror",
+        "non-string",
+        "integer",
+        "number",
+        "len()",
+        "check type",
+        "isinstance",
+        "str",
+        "try",
+        "except",
+        "ignore",
+        "skip"
+      ]
+    },
+    {
+      "name": "Code - CSS Selector",
+      "type": "info_extraction_regex",
+      "prompt": "Write a CSS selector to select all paragraph (<p>) elements that are direct children of a <div> element with the class 'container'. Output ONLY the selector string itself, with no extra formatting like backticks or braces.",
+      "expected_regex_map": {
+        "selector": "^\\s*div\\.container\\s*>\\s*p\\s*$"
+      }
+    },
+    {
+      "name": "Code - CSS Selector - Gates",
+      "type": "info_extraction_regex",
+      "prompt": "ATTENTION: PROVIDE ONLY THE CSS SELECTOR STRING THAT MATCHES THE DESCRIPTION (DIRECT CHILD 'p' UNDER 'div.container'). NO EXTRA TEXT, FORMATTING, OR EXPLANATION.\n\nWrite a CSS selector to select all paragraph (<p>) elements that are direct children of a <div> element with the class 'container'. Output ONLY the selector string itself, with no extra formatting like backticks or braces.",
+      "expected_regex_map": {
+        "selector": "^\\s*div\\.container\\s*>\\s*p\\s*$"
+      }
+    },
+    {
+      "name": "Code - CSS Selector - Persona",
+      "type": "info_extraction_regex",
+      "prompt": "You are a CSS code generator. Create the selector based on the requirements.\n\nWrite a CSS selector to select all paragraph (<p>) elements that are direct children of a <div> element with the class 'container'. Output ONLY the selector string itself, with no extra formatting like backticks or braces.",
+      "expected_regex_map": {
+        "selector": "^\\s*div\\.container\\s*>\\s*p\\s*$"
+      }
+    },
+    {
+      "name": "Generate JSON - Simple",
+      "type": "json_gen",
+      "prompt": "Generate a JSON object representing a person with the name 'Alice', age 30, and city 'New York'. Output ONLY the valid JSON object.",
+      "expected_structure": {
+        "name": "Alice",
+        "age": 30,
+        "city": "New York"
+      }
+    },
+    {
+      "name": "Generate JSON - Simple - Gates",
+      "type": "json_gen",
+      "prompt": "ATTENTION: GENERATE A VALID JSON OBJECT WITH THE SPECIFIED KEYS ('name', 'age', 'city') AND VALUES ('Alice', 30, 'New York'). OUTPUT ONLY THE JSON OBJECT. NO EXTRA TEXT.\n\nGenerate a JSON object representing a person with the name 'Alice', age 30, and city 'New York'. Output ONLY the valid JSON object.",
+      "expected_structure": {
+        "name": "Alice",
+        "age": 30,
+        "city": "New York"
+      }
+    },
+    {
+      "name": "Generate JSON - Simple - Persona",
+      "type": "json_gen",
+      "prompt": "You are a JSON data entry bot. Create the record as specified.\n\nGenerate a JSON object representing a person with the name 'Alice', age 30, and city 'New York'. Output ONLY the valid JSON object.",
+      "expected_structure": {
+        "name": "Alice",
+        "age": 30,
+        "city": "New York"
+      }
+    },
+    {
+      "name": "Generate JSON - Nested",
+      "type": "json_gen",
+      "prompt": "Generate a JSON object for an order. It should have an 'orderId' (string 'XYZ-123') and an 'items' key containing a list of two items. Each item should have a 'productId' (string) and 'quantity' (integer). Use 'PROD-A', 2 for the first item and 'PROD-B', 1 for the second. Output ONLY the valid JSON object.",
+      "expected_structure": {
+        "orderId": "XYZ-123",
+        "items": [
+          {
+            "productId": "PROD-A",
+            "quantity": 2
+          },
+          {
+            "productId": "PROD-B",
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Generate JSON - Nested - Gates",
+      "type": "json_gen",
+      "prompt": "ATTENTION: GENERATE A VALID JSON OBJECT FOLLOWING THE NESTED STRUCTURE (orderId, items list with productId/quantity objects). USE THE EXACT VALUES PROVIDED. OUTPUT ONLY THE JSON OBJECT.\n\nGenerate a JSON object for an order. It should have an 'orderId' (string 'XYZ-123') and an 'items' key containing a list of two items. Each item should have a 'productId' (string) and 'quantity' (integer). Use 'PROD-A', 2 for the first item and 'PROD-B', 1 for the second. Output ONLY the valid JSON object.",
+      "expected_structure": {
+        "orderId": "XYZ-123",
+        "items": [
+          {
+            "productId": "PROD-A",
+            "quantity": 2
+          },
+          {
+            "productId": "PROD-B",
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Generate JSON - Nested - Persona",
+      "type": "json_gen",
+      "prompt": "You are an order processing system component that generates JSON order summaries.\n\nGenerate a JSON object for an order. It should have an 'orderId' (string 'XYZ-123') and an 'items' key containing a list of two items. Each item should have a 'productId' (string) and 'quantity' (integer). Use 'PROD-A', 2 for the first item and 'PROD-B', 1 for the second. Output ONLY the valid JSON object.",
+      "expected_structure": {
+        "orderId": "XYZ-123",
+        "items": [
+          {
+            "productId": "PROD-A",
+            "quantity": 2
+          },
+          {
+            "productId": "PROD-B",
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Generate YAML - Simple",
+      "type": "yaml_gen",
+      "prompt": "Generate a YAML document representing server configuration with keys 'host' (value 'server.example.com'), 'port' (value 8080), and 'enabled' (value true). Output ONLY the valid YAML document.",
+      "expected_structure": {
+        "host": "server.example.com",
+        "port": 8080,
+        "enabled": true
+      }
+    },
+    {
+      "name": "Generate YAML - Simple - Gates",
+      "type": "yaml_gen",
+      "prompt": "ATTENTION: GENERATE A VALID YAML DOCUMENT WITH THE SPECIFIED KEYS ('host', 'port', 'enabled') AND THEIR EXACT VALUES. OUTPUT ONLY THE YAML DOCUMENT.\n\nGenerate a YAML document representing server configuration with keys 'host' (value 'server.example.com'), 'port' (value 8080), and 'enabled' (value true). Output ONLY the valid YAML document.",
+      "expected_structure": {
+        "host": "server.example.com",
+        "port": 8080,
+        "enabled": true
+      }
+    },
+    {
+      "name": "Generate YAML - Simple - Persona",
+      "type": "yaml_gen",
+      "prompt": "You are a configuration file generator creating a YAML config.\n\nGenerate a YAML document representing server configuration with keys 'host' (value 'server.example.com'), 'port' (value 8080), and 'enabled' (value true). Output ONLY the valid YAML document.",
+      "expected_structure": {
+        "host": "server.example.com",
+        "port": 8080,
+        "enabled": true
+      }
+    },
+    {
+      "name": "Generate YAML - List of Dicts",
+      "type": "yaml_gen",
+      "prompt": "Generate a YAML document representing a list of users. Each user in the list should be an object with 'id' (integer) and 'role' (string). Create two users: id 101, role 'admin' and id 202, role 'user'. Output ONLY the valid YAML document.",
+      "expected_structure": [
+        {
+          "id": 101,
+          "role": "admin"
+        },
+        {
+          "id": 202,
+          "role": "user"
+        }
+      ]
+    },
+    {
+      "name": "Generate YAML - List of Dicts - Gates",
+      "type": "yaml_gen",
+      "prompt": "ATTENTION: GENERATE A VALID YAML DOCUMENT REPRESENTING A LIST OF USERS. EACH USER MUST BE A DICTIONARY WITH 'id' (integer) AND 'role' (string). USE THE EXACT VALUES PROVIDED FOR THE TWO USERS. OUTPUT ONLY THE YAML DOCUMENT.\n\nGenerate a YAML document representing a list of users. Each user in the list should be an object with 'id' (integer) and 'role' (string). Create two users: id 101, role 'admin' and id 202, role 'user'. Output ONLY the valid YAML document.",
+      "expected_structure": [
+        {
+          "id": 101,
+          "role": "admin"
+        },
+        {
+          "id": 202,
+          "role": "user"
+        }
+      ]
+    },
+    {
+      "name": "Generate YAML - List of Dicts - Persona",
+      "type": "yaml_gen",
+      "prompt": "You are a user management system exporting data to YAML.\n\nGenerate a YAML document representing a list of users. Each user in the list should be an object with 'id' (integer) and 'role' (string). Create two users: id 101, role 'admin' and id 202, role 'user'. Output ONLY the valid YAML document.",
+      "expected_structure": [
+        {
+          "id": 101,
+          "role": "admin"
+        },
+        {
+          "id": 202,
+          "role": "user"
+        }
+      ]
+    },
+    {
+      "name": "Fix JSON - Missing Comma",
+      "type": "json_fix",
+      "prompt": "The following JSON is invalid due to a missing comma. Correct it and output ONLY the valid JSON object.\n\n```json\n{\n  \"name\": \"Bob\",\n  \"age\": 25\n  \"city\": \"London\"\n}\n```",
+      "expected_structure": {
+        "name": "Bob",
+        "age": 25,
+        "city": "London"
+      }
+    },
+    {
+      "name": "Fix JSON - Missing Comma - Gates",
+      "type": "json_fix",
+      "prompt": "ATTENTION: IDENTIFY AND FIX THE SYNTAX ERROR (MISSING COMMA) IN THE PROVIDED JSON. OUTPUT ONLY THE CORRECTED, VALID JSON OBJECT.\n\nThe following JSON is invalid due to a missing comma. Correct it and output ONLY the valid JSON object.\n\n```json\n{\n  \"name\": \"Bob\",\n  \"age\": 25\n  \"city\": \"London\"\n}\n```",
+      "expected_structure": {
+        "name": "Bob",
+        "age": 25,
+        "city": "London"
+      }
+    },
+    {
+      "name": "Fix JSON - Missing Comma - Persona",
+      "type": "json_fix",
+      "prompt": "You are a JSON validator and fixer. Correct the syntax error in the input.\n\nThe following JSON is invalid due to a missing comma. Correct it and output ONLY the valid JSON object.\n\n```json\n{\n  \"name\": \"Bob\",\n  \"age\": 25\n  \"city\": \"London\"\n}\n```",
+      "expected_structure": {
+        "name": "Bob",
+        "age": 25,
+        "city": "London"
+      }
+    },
+    {
+      "name": "Fix JSON - Incorrect Type",
+      "type": "json_fix",
+      "prompt": "The following JSON is invalid because the 'active' value should be a boolean, not a string. Correct it and output ONLY the valid JSON object.\n\n```json\n{\n  \"userId\": 456,\n  \"active\": \"true\"\n}\n```",
+      "expected_structure": {
+        "userId": 456,
+        "active": true
+      }
+    },
+    {
+      "name": "Fix JSON - Incorrect Type - Gates",
+      "type": "json_fix",
+      "prompt": "ATTENTION: IDENTIFY AND FIX THE TYPE ERROR (STRING INSTEAD OF BOOLEAN) IN THE PROVIDED JSON. OUTPUT ONLY THE CORRECTED, VALID JSON OBJECT.\n\nThe following JSON is invalid because the 'active' value should be a boolean, not a string. Correct it and output ONLY the valid JSON object.\n\n```json\n{\n  \"userId\": 456,\n  \"active\": \"true\"\n}\n```",
+      "expected_structure": {
+        "userId": 456,
+        "active": true
+      }
+    },
+    {
+      "name": "Fix JSON - Incorrect Type - Persona",
+      "type": "json_fix",
+      "prompt": "You are a JSON data type corrector. Fix the incorrect type for the 'active' field.\n\nThe following JSON is invalid because the 'active' value should be a boolean, not a string. Correct it and output ONLY the valid JSON object.\n\n```json\n{\n  \"userId\": 456,\n  \"active\": \"true\"\n}\n```",
+      "expected_structure": {
+        "userId": 456,
+        "active": true
+      }
+    },
+    {
+      "name": "Fix YAML - Indentation",
+      "type": "yaml_fix",
+      "prompt": "The following YAML is invalid due to incorrect indentation for the 'port' key. Correct it and output ONLY the valid YAML document.\n\n```yaml\nserver:\n  host: myhost\nport: 80\n```",
+      "expected_structure": {
+        "server": {
+          "host": "myhost",
+          "port": 80
+        }
+      }
+    },
+    {
+      "name": "Fix YAML - Indentation - Gates",
+      "type": "yaml_fix",
+      "prompt": "ATTENTION: IDENTIFY AND FIX THE INDENTATION ERROR IN THE PROVIDED YAML. OUTPUT ONLY THE CORRECTED, VALID YAML DOCUMENT.\n\nThe following YAML is invalid due to incorrect indentation for the 'port' key. Correct it and output ONLY the valid YAML document.\n\n```yaml\nserver:\n  host: myhost\nport: 80\n```",
+      "expected_structure": {
+        "server": {
+          "host": "myhost",
+          "port": 80
+        }
+      }
+    },
+    {
+      "name": "Fix YAML - Indentation - Persona",
+      "type": "yaml_fix",
+      "prompt": "You are a YAML syntax checker focused on proper indentation.\n\nThe following YAML is invalid due to incorrect indentation for the 'port' key. Correct it and output ONLY the valid YAML document.\n\n```yaml\nserver:\n  host: myhost\nport: 80\n```",
+      "expected_structure": {
+        "server": {
+          "host": "myhost",
+          "port": 80
+        }
+      }
+    },
+    {
+      "name": "Fix YAML - List Format",
+      "type": "yaml_fix",
+      "prompt": "The following YAML intends to be a list of items but uses incorrect syntax. Correct it to be a valid YAML list containing 'apple' and 'banana'. Output ONLY the valid YAML document.\n\n```yaml\nitems: apple, banana\n```",
+      "expected_structure": {
+        "items": [
+          "apple",
+          "banana"
+        ]
+      }
+    },
+    {
+      "name": "Fix YAML - List Format - Gates",
+      "type": "yaml_fix",
+      "prompt": "ATTENTION: IDENTIFY AND FIX THE INCORRECT LIST SYNTAX IN THE PROVIDED YAML. ENSURE THE OUTPUT IS A VALID YAML DOCUMENT WITH 'items' AS A LIST CONTAINING 'apple' AND 'banana'. OUTPUT ONLY THE CORRECTED YAML.\n\nThe following YAML intends to be a list of items but uses incorrect syntax. Correct it to be a valid YAML list containing 'apple' and 'banana'. Output ONLY the valid YAML document.\n\n```yaml\nitems: apple, banana\n```",
+      "expected_structure": {
+        "items": [
+          "apple",
+          "banana"
+        ]
+      }
+    },
+    {
+      "name": "Fix YAML - List Format - Persona",
+      "type": "yaml_fix",
+      "prompt": "You are a YAML structure expert specializing in list formats.\n\nThe following YAML intends to be a list of items but uses incorrect syntax. Correct it to be a valid YAML list containing 'apple' and 'banana'. Output ONLY the valid YAML document.\n\n```yaml\nitems: apple, banana\n```",
+      "expected_structure": {
+        "items": [
+          "apple",
+          "banana"
+        ]
+      }
+    }
+  ]
+}

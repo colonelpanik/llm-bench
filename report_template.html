@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{REPORT_TITLE}}</title>
+    <style>
+        :root {
+            --primary-color: #3498db; /* Blue */
+            --secondary-color: #2c3e50; /* Dark Blue/Grey */
+            --accent-color: #e74c3c; /* Red */
+            --light-grey: #f8f9fa;
+            --medium-grey: #ecf0f1;
+            --dark-grey: #7f8c8d;
+            --text-color: #34495e;
+            --border-color: #bdc3c7;
+            --link-color: #2980b9;
+            --success-color: #2ecc71;
+            --fail-color: #e74c3c;
+            --warn-color: #f39c12;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0 25px 25px 25px; /* Add padding */
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--secondary-color);
+            margin-block-start: 1.5em;
+            margin-block-end: 0.8em;
+        }
+
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 2em;
+        }
+
+        h2 {
+            border-bottom: 1px solid var(--medium-grey);
+            padding-bottom: 8px;
+            font-size: 1.6em;
+        }
+         h3 { font-size: 1.3em; }
+         h4 { font-size: 1.1em; margin-bottom: 0.5em; color: #555; }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+            border: 1px solid var(--border-color); /* Add outer border */
+        }
+
+        th, td {
+            border: 1px solid var(--medium-grey); /* Lighter internal borders */
+            padding: 10px 12px; /* Adjust padding */
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f2f7fc; /* Lighter blue header */
+            font-weight: 600; /* Slightly bolder */
+            color: var(--secondary-color);
+            white-space: nowrap;
+        }
+
+        /* Alternating row colors */
+        tbody tr:nth-child(even) { background-color: var(--light-grey); }
+        tbody tr:hover { background-color: #e8f4fd; } /* Light blue hover */
+
+        /* Collapsible Button Styling */
+        .collapsible {
+            background-color: var(--secondary-color);
+            color: white;
+            cursor: pointer;
+            padding: 12px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.15em; /* Larger font */
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border-radius 0.1s ease-out;
+            font-weight: 600;
+            position: relative; /* For icon positioning */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .collapsible:hover { background-color: var(--primary-color); }
+        .collapsible.active {
+            background-color: var(--primary-color);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        /* Plus/Minus Icon using pseudo-element */
+        .collapsible::before {
+            content: '\25B6'; /* Unicode for black right-pointing triangle (▶) */
+            /* content: '\002B'; plus sign */
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+            font-size: 0.9em; /* Adjust icon size */
+            line-height: 1.3; /* Align icon vertically */
+        }
+        .collapsible.active::before {
+            transform: rotate(90deg);
+            /* content: "\2212"; minus sign */
+        }
+
+        /* Collapsible Content Area */
+        .content {
+            padding: 20px 25px;
+            display: none; /* Hidden by default */
+            overflow: hidden;
+            background-color: #fff; /* White background */
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 5px 5px; /* Match button radius */
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Plot Container Styling */
+        .plot-container {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--light-grey);
+        }
+        .plot-container img {
+             max-width: 85%; /* Responsive width */
+             height: auto;
+             margin-top: 15px;
+             margin-bottom: 15px;
+             border: 1px solid var(--border-color);
+             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+             background-color: white;
+             border-radius: 3px;
+         }
+        .plot-container h3 { margin-bottom: 20px; }
+        .plot-separator { border-top: 1px dashed var(--border-color); margin: 25px auto; width: 80%; }
+
+        /* Code Snippets */
+        pre, code { font-family: 'Consolas', 'Monaco', monospace; font-size: 0.95em; }
+        pre {
+            background-color: var(--medium-grey);
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 200px; /* Limit height */
+            overflow-y: auto; /* Add scroll if needed */
+        }
+        pre.response-snippet, pre.prompt-snippet {
+             background-color: #fdfdfe; /* Slightly off-white for snippets */
+             border-color: #eee;
+             margin-top: 5px;
+             padding: 8px;
+        }
+
+        /* Styles for nested tables in detailed view */
+        .content table { box-shadow: none; margin-top: 15px; border: 1px solid #ddd; }
+        .content th, .content td { padding: 8px 10px; font-size: 0.95em; }
+        .content thead th { background-color: #e9eff5; } /* Light blue header for nested */
+        .content table.mini-summary { width: auto; margin-bottom: 20px; float: left; margin-right: 20px; } /* Styling for quick stats */
+        .content table.mini-summary th { text-align: right; font-weight: normal; background-color: transparent; border: none; padding: 4px 8px; color: var(--dark-grey);}
+        .content table.mini-summary td { font-weight: bold; background-color: transparent; border: none; padding: 4px 8px; }
+        .content table.detailed-tasks { clear: both; } /* Ensure task table clears floats */
+        .content td.details-cell { font-size: 0.9em; } /* Smaller font for details */
+        .content td pre { max-height: 100px; } /* Shorter snippets in table */
+
+        /* Definition/Help Text */
+        .definition {
+            font-size: 0.9em;
+            color: var(--dark-grey);
+            margin-top: -15px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid var(--medium-grey);
+        }
+        .status-pass { color: var(--success-color); font-weight: bold; }
+        .status-fail { color: var(--fail-color); font-weight: bold; }
+        .status-error { color: var(--warn-color); font-weight: bold; }
+        .status-unknown { color: var(--dark-grey); font-weight: bold; }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid var(--medium-grey);
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--dark-grey);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>{{REPORT_TITLE}}</h1>
+    <p>Generated: {{TIMESTAMP}}</p>
+
+    <!-- Overall Summary Section -->
+    <div class="summary-section">
+        <h2>Overall Results Summary</h2>
+         <div class="plot-container">
+             <h3>Rankings & Metrics Visualizations</h3>
+             <!-- Plots injected here -->
+             <img src="{{OVERALL_SCORE_PLOT_PATH}}" alt="Overall Score Ranking Plot" title="Overall Weighted Score Ranking (Higher is Better)"><hr class="plot-separator">
+             <img src="{{OLLAMA_SCORE_PLOT_PATH}}" alt="Ollama Performance Score Plot" title="Ollama Performance Score Ranking (Higher is Better)"><hr class="plot-separator">
+             <img src="{{ACCURACY_PLOT_PATH}}" alt="Accuracy Ranking Plot" title="Overall Accuracy (%) Ranking (Higher is Better)"><hr class="plot-separator">
+             <img src="{{TOKPS_PLOT_PATH}}" alt="Tokens/Second Plot" title="Average Tokens/Second Ranking (Ollama Models, Higher is Better)"><hr class="plot-separator">
+             <img src="{{RAM_PLOT_PATH}}" alt="RAM Usage Plot" title="Peak RAM Increase Ranking (Ollama Models, Lower is Better)"><hr class="plot-separator">
+             <img src="{{GPU_PLOT_PATH}}" alt="GPU Memory Usage Plot" title="Peak GPU Memory Increase Ranking (Ollama Models - GPU 0, Lower is Better)">
+         </div>
+
+        <h3>Overall Performance Table</h3>
+         <p class="definition">
+             Ranked by <b>Overall Weighted Score</b> (higher is better), using <b>Ollama Performance Score</b> as a tie-breaker.<br>
+             <b>Overall Score:</b> Category-weighted average accuracy across tasks.<br>
+             <b>Ollama Perf Score:</b> Weighted blend of Accuracy (50%), Tokens/Sec (30%), and RAM Efficiency (20%) for Ollama models only.<br>
+             <b>Acc:</b> Correct tasks / Successfully completed tasks.<br>
+             <b>Avg Tok/s:</b> Average tokens per second during generation (Ollama only).<br>
+             <b>RAM/GPU Δ:</b> Peak increase in memory usage compared to initial state (Ollama only, lower is better).<br>
+             <b>Avg Score %:</b> Average score on tasks using partial scoring (e.g., weighted keywords, semantic similarity).<br>
+         </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Overall Score</th>
+                    <th>Ollama Perf Score</th>
+                    <th>Accuracy (%)</th>
+                    <th>Avg Tok/s</th>
+                    <th>RAM Δ (MB)</th>
+                    <th>GPU Δ (MB)</th>
+                    <th>Avg Score (%)</th>
+                    <th>Avg Time/Task (s)</th>
+                    <th>Error Rate (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- {{SUMMARY_TABLE_ROWS}} will be injected -->
+                {{SUMMARY_TABLE_ROWS}}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Per Task Type Metrics Section (Collapsible) -->
+    <button type="button" class="collapsible active">Per Task Type Average Metrics</button> <!-- Start expanded -->
+    <div class="content" style="display: block;"> <!-- Start expanded -->
+        <p>Average performance metrics aggregated across all completed models for each task type.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task Type</th>
+                    <th>Total Tasks Run</th>
+                    <th>Avg Accuracy (%)</th>
+                    <th>Avg Score (%)</th>
+                    <th>Avg Time (s)</th>
+                    <th>Avg Tok/s</th>
+                    <th>Total API Errors</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <!-- {{PER_TYPE_TABLE_ROWS}} will be injected -->
+                {{PER_TYPE_TABLE_ROWS}}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Detailed Task Results Section (Collapsible per Model) -->
+    <h2>Detailed Model Results</h2>
+    <!-- {{DETAILED_RESULTS_HTML}} will inject multiple collapsible sections -->
+    {{DETAILED_RESULTS_HTML}}
+
+    <!-- Full JSON Data Section (Collapsible) -->
+    <button type="button" class="collapsible">Full Results Data (JSON)</button>
+    <div class="content">
+        <p>Complete raw results data used to generate this report.</p>
+        <pre><code>{{FULL_RESULTS_JSON}}</code></pre>
+    </div>
+
+    <div class="footer">
+        LLM Benchmark Runner Report
+    </div>
+
+    <script>
+        // Simple script for collapsibles
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content && content.classList.contains('content')) {
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

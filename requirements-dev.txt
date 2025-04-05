@@ -1,0 +1,27 @@
+# Here is the entire file
+# LLM Benchmark Runner Requirements
+
+# --- Core Dependencies (Required for basic operation) ---
+# requests is used for all API communication (Ollama, Gemini)
+requests>=2.20.0
+# PyYAML is required for loading the config.yaml file and for YAML tasks
+PyYAML>=5.0
+
+# --- Optional Dependencies (Install only if feature is needed) ---
+Install manually, e.g., `pip install psutil`
+
+# For CPU RAM Monitoring (--ram-monitor enable)
+psutil>=5.0.0
+
+# For NVIDIA GPU Monitoring (--gpu-monitor enable)
+pynvml>=11.0.0
+
+# For Report Visualizations (--visualizations enable)
+matplotlib>=3.0.0
+
+# For Semantic Similarity Evaluation (--semantic-eval enable)
+# sentence-transformers>=2.0.0
+(Note: sentence-transformers will download model files on first use)
+
+# --- For Development/Testing (Installs all optional dependencies) ---
+# pip install psutil pynvml matplotlib sentence-transformers
